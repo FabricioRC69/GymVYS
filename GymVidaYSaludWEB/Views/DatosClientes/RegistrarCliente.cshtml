@@ -1,0 +1,92 @@
+﻿@model GymVidaYSaludWEB.Entities.DatosCliente
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GymVidaYSaludWEB.styles.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Holi</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col"></div>
+            <div class="col">
+                <div class="card mt-5 cardLogin">
+                    <div class="card-header text-center">
+                        Registrese
+                    </div>
+                    <div class="card-body">
+
+                        @using (Html.BeginForm("RegistrarCliente", "DatosClientes"))
+                        {
+
+                            <div class="mb-3">
+                                <label class="text-center">Cedula</label>
+                                @Html.TextBox("Cedula","",
+                            new
+                            {
+                            @class="form-control",
+                            @type="input",
+                            })
+                            </div>
+                            <div class="mb-3">
+                                <label class="text-center">Nombre Completo</label>
+                                @Html.TextBox("NombreCompleto","",
+                            new
+                            {
+                            @class="form-control",
+                            @type="input",
+                            })
+                            </div>
+                               <div class="mb-3">
+                                <label class="text-center">Numero de contacto</label>
+                                @Html.TextBox("NumContacto","",
+                            new
+                            {
+                            @class="form-control",
+                            @type="input",
+                            })
+                            </div>
+                               <div class="mb-3">
+                                <label class="text-center">Correo</label>
+                                @Html.TextBox("Correo","",
+                            new
+                            {
+                            @class="form-control",
+                            @type="input",
+                            })
+                            </div>
+
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-color">Registrarse</button>
+                                </div>
+                                <div class="col">
+                                    <a asp-controller="DatosCliente" asp-action="LogIn">¿Ya tiene una cuenta?</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
+</html>

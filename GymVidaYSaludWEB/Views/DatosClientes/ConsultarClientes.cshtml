@@ -1,0 +1,43 @@
+﻿@model IEnumerable<GymVidaYSaludWEB.Entities.DatosCliente>
+
+
+@{
+    ViewData["Title"] = "ConsultarCLientes";
+
+}
+<table class="table">
+    <thead>
+        <tr>
+        <td>Cedula</td>
+        <td>Nombre completo</td>
+        <td>Dia de pago</td>
+        <td>Numero de contacto</td>
+        <td>Correo electrónico</td>
+    </tr>
+    </thead>
+        
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Cedula</td>
+
+
+                <td>@item.NombreCompleto</td>
+
+
+                <td>@item.Dia_de_Pago_Cada_Mes</td>
+
+
+                <td>@item.NumContacto</td>
+
+                <td>@item.Correo</td>
+            </tr>
+
+        }
+    </tbody>
+
+
+</table>
+
