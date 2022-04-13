@@ -28,46 +28,46 @@ namespace GymVidaYSaludWEB.Models
 
         }
 
-        public async Task<DatosCliente> RegistrarCliente(string ruta, string Cedula, string NombreCompleto, string NumContacto, string Correo)
+        public string RegistrarCliente(string ruta, DatosCliente cliente)
         {
-            using (var http = new HttpClient())
-            {
-                
-                ruta += "https://localhost:7164/api/Proyecto/RegistrarCliente?Cedula=987654321&NombreCompleto=Maurisio%20Brenes&NumContacto="&Correo="+Correo;
+            using (var client = new HttpClient()) { 
 
-                HttpResponseMessage respuesta = http.GetAsync(ruta).Result;
+            JsonContent content = JsonContent.Create(cliente);
+                HttpResponseMessage respuesta = client.PostAsync(ruta, content).Result;
                 if (respuesta.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Login", "LogIn");
+                    return "Registro exitoso";
+
                 }
-                else
-                {
-                    return RedirectToAction("Login", "Register");
+                else {
+                    return "Error";
                 }
+
+            
             }
+                
 
         }
     }
 }
-
-
 /*
-  using (var http = new HttpClient())
-             {
-                 
-                 var stringPayload = JsonConvert.SerializeObject(cliente);
-                
-                 var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
-                 
-                 using (var response = await http.PostAsync(ruta+cliente, httpContent))
-                 {
-                     string apiResponse = await response.Content.ReadAsStringAsync();
-                     cliente = JsonConvert.DeserializeObject<DatosCliente>(apiResponse);
-                 }
-              }
-             return cliente;
+ using (var http = new HttpClient())
+            {
+
+                var stringPayload = JsonConvert.SerializeObject(cliente);
+
+                var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+
+                using (var response = await http.PostAsync(ruta + cliente, httpContent))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    cliente = JsonConvert.DeserializeObject<DatosCliente>(apiResponse);
+                }
+            }
+ 
  
  
  */
+
 
 

@@ -41,12 +41,12 @@ namespace GymVidaYSaludWEB.Controllers
         }
 
         [HttpPost]
-        public IActionResult RegistrarCliente(string Cedula, string NombreCompleto, string NumContacto, string Correo) {
+        public IActionResult RegistrarCliente(DatosCliente cliente) {
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
-            
+            ruta += "/api/Proyecto/RegistrarCliente";
 
-            var resultado = modelo.RegistrarCliente(ruta, Cedula, NombreCompleto, NumContacto, Correo);
-            if (resultado==null)
+            string mensaje = modelo.RegistrarCliente(ruta,  cliente);
+            if (mensaje== "Registro exitoso")
             {
 
                 return RedirectToAction("ConsultarTodosClientes", "DatosClientes");
