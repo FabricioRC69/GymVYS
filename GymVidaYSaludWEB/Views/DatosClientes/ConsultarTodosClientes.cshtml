@@ -18,12 +18,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.NombreCompleto)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dia_de_Pago_Cada_Mes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumContacto)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Correo)
             </th>
@@ -39,19 +34,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.NombreCompleto)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dia_de_Pago_Cada_Mes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumContacto)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Correo)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { cedula=item.Cedula }) |
+                @Html.ActionLink("Información", "ConsultarUnCliente", new { cedula=item.Cedula }) |
+                @Html.ActionLink("Borrar", "EliminarCliente", new { cedula=item.Cedula})
             </td>
         </tr>
 }

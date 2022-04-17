@@ -490,3 +490,8 @@ C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB\obj\De
 C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB\obj\Debug\net6.0\GymVidaYSaludWEB.pdb
 C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB\obj\Debug\net6.0\GymVidaYSaludWEB.genruntimeconfig.cache
 C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB\obj\Debug\net6.0\ref\GymVidaYSaludWEB.dll
+C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB\obj\Debug\net6.0\GymVidaYSaludWEB.MvcApplicationPartsAssemblyInfo.cs

@@ -27,7 +27,26 @@ namespace GymVidaYSaludWEB.Models
             return resp.ListaDatos;
 
         }
+        public DatosCliente ConsultarUnCliente(string ruta)
+        {
+            RespuestaDatosClientes resp = new RespuestaDatosClientes();
+            List<RespuestaDatosClientes> lista = new List<RespuestaDatosClientes>();
 
+            using (var http = new HttpClient())
+            {
+
+                HttpResponseMessage respuesta = http.GetAsync(ruta).Result;
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    var datos = respuesta.Content.ReadAsStringAsync().Result;
+                    resp = JsonConvert.DeserializeObject<RespuestaDatosClientes>(datos);
+
+                }
+
+            }
+            return resp.Datos;
+
+        }
         public string RegistrarCliente(string ruta, DatosCliente cliente)
         {
             using (var client = new HttpClient()) { 
@@ -48,26 +67,30 @@ namespace GymVidaYSaludWEB.Models
                 
 
         }
-    }
-}
-/*
- using (var http = new HttpClient())
+        public string EliminarCliente(string ruta) {
+            using (var client = new HttpClient())
             {
 
-                var stringPayload = JsonConvert.SerializeObject(cliente);
-
-                var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
-
-                using (var response = await http.PostAsync(ruta + cliente, httpContent))
+                
+                HttpResponseMessage respuesta = client.DeleteAsync(ruta).Result;
+                if (respuesta.IsSuccessStatusCode)
                 {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    cliente = JsonConvert.DeserializeObject<DatosCliente>(apiResponse);
+                    return "Eliminador Correctamente";
+
                 }
+                else
+                {
+                    return null;
+
+                }
+
+
             }
- 
- 
- 
- */
+
+        }
 
 
 
+    }
+
+}

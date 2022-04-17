@@ -22,14 +22,26 @@ namespace GymVidaYSaludWEB.Controllers
             _clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
             _configuration = configuration;
         }
-        
+
         [HttpGet]
         public IActionResult ConsultarTodosClientes() {
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ConsultarTodosClientes";
             var resultado = modelo.ConsultarTodosClientes(ruta);
-             
-        return View(resultado);
+
+            return View(resultado);
+        }
+
+
+
+        [HttpGet]
+        public IActionResult ConsultarUnCliente(string cedula)
+        {
+
+            string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
+            ruta += "/api/Proyecto/ConsultarUnCliente?Cedula=" + cedula;
+            var resultado = modelo.ConsultarUnCliente(ruta);
+            return View(resultado);
         }
 
 
@@ -45,16 +57,34 @@ namespace GymVidaYSaludWEB.Controllers
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/RegistrarCliente";
 
-            string mensaje = modelo.RegistrarCliente(ruta,  cliente);
-            if (mensaje== "Registro exitoso")
+            string mensaje = modelo.RegistrarCliente(ruta, cliente);
+            if (mensaje == "Registro exitoso")
             {
 
                 return RedirectToAction("ConsultarTodosClientes", "DatosClientes");
             }
-            else { 
-            
-            return View(cliente);
+            else {
+
+                return View(cliente);
             }
+        }
+        [HttpGet]
+        public IActionResult EliminarCliente(string cedula) {
+
+            string respuesta = "";
+            string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
+            ruta += "/api/Proyecto/EliminarCliente?Cedula=" + cedula;
+            respuesta = modelo.EliminarCliente(ruta);
+            return RedirectToAction("Index");
+
+            /*if (respuesta != null)
+            {
+                return RedirectToAction("ConsultarTodosClientes", "DatosClientes");
+            }
+            else {
+
+                return RedirectToAction("RegistrarCliente", "DatosClientes"); ;    
+            }*/
         }
 
 

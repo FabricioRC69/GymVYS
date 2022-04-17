@@ -1,5 +1,8 @@
 ﻿namespace GymVidaYSaludWEB.Entities
 {
+
+
+
     public class DatosCliente
     {
 

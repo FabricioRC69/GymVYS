@@ -15,12 +15,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Fabricio\Desktop\ProyectoIrene\GymVidaYSaludWEB\GymVidaYSaludWEB
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Fabricio/Desktop/ProyectoIrene/GymVidaYSaludWEB/GymVidaYSaludWEB/Views/DatosClientes/ConsultarClientes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xDb25zdWx0YXJDbGllbnRlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Fabricio/Desktop/ProyectoIrene/GymVidaYSaludWEB/GymVidaYSaludWEB/Views/DatosClientes/ConsultarTodosClientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xDb25zdWx0YXJUb2Rvc0NsaWVudGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fabricio/Desktop/ProyectoIrene/GymVidaYSaludWEB/GymVidaYSaludWEB/Views/DatosClientes/ConsultarUnCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xDb25zdWx0YXJVbkNsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fabricio/Desktop/ProyectoIrene/GymVidaYSaludWEB/GymVidaYSaludWEB/Views/DatosClientes/EliminarCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xFbGltaW5hckNsaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Fabricio/Desktop/ProyectoIrene/GymVidaYSaludWEB/GymVidaYSaludWEB/Views/DatosClientes/RegistrarCliente.cshtml]
