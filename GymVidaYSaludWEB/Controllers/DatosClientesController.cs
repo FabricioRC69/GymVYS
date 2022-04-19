@@ -75,7 +75,7 @@ namespace GymVidaYSaludWEB.Controllers
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/EliminarCliente?Cedula=" + cedula;
             respuesta = modelo.EliminarCliente(ruta);
-            return RedirectToAction("Index");
+            return RedirectToAction("ConsultarTodosClientes", "DatosClientes");
 
             /*if (respuesta != null)
             {

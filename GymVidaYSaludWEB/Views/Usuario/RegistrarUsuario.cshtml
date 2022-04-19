@@ -6,17 +6,18 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/GymVidaYSaludWEB.styles.css" asp-append-version="true" />
     <meta name="viewport" content="width=device-width" />
-    <title>Holi</title>
-</head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registrar Usuario</title>
 
+
+</head>
 <body>
-    <div class="container">
+     <div class="container">
 
         <div class="row">
 
@@ -24,35 +25,40 @@
             <div class="col">
                 <div class="card mt-5 cardLogin">
                     <div class="card-header text-center">
-                        Registrese
+                        Registrar Usuario
                     </div>
                     <div class="card-body">
 
-                        @using (Html.BeginForm("RegistrarUsuario", "Usuario"))
+                        @using (Html.BeginForm("RegistraUsuario", "Usuario"))
                         {
 
                             <div class="mb-3">
                                 <label class="text-center">Correo</label>
-                                @Html.TextBox("correo","",
+                                @Html.TextBox("Correo","",
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
                             </div>
                             <div class="mb-3">
                                 <label class="text-center">Contraseña</label>
-                                @Html.TextBox("constrasena","",
+                                @Html.TextBox("Contraseña","",
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
                             </div>
-
                             <div class="mb-3">
                                 <label class="text-center">Rol</label>
-                                @Html.TextBox("Rol","",
+                                @Html.DropDownList("Rol",
+                                 new List<SelectListItem>{
+                                     new SelectListItem{ Text ="Mayor", Value ="1"},
+                                     new SelectListItem{ Text ="Menor", Value ="2"}
+                                 },
                             new
                             {
                             @class="form-control",
@@ -74,9 +80,5 @@
             <div class="col"></div>
         </div>
     </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
-
 </html>

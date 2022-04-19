@@ -8825,19 +8825,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Fabricio\\.nuget\\packages\\": {}
+    "C:\\Users\\pey09\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fabricio\\Desktop\\ProyectoIrene\\GymVidaYSaludWEB\\GymVidaYSaludWEB\\GymVidaYSaludWEB.csproj",
+      "projectUniqueName": "D:\\Uni. Fidelitas\\Universidad 8 cuatrimestre\\Programacion avanzada\\Proyecto\\WEB\\GymVYS\\GymVidaYSaludWEB\\GymVidaYSaludWEB.csproj",
       "projectName": "GymVidaYSaludWEB",
-      "projectPath": "C:\\Users\\Fabricio\\Desktop\\ProyectoIrene\\GymVidaYSaludWEB\\GymVidaYSaludWEB\\GymVidaYSaludWEB.csproj",
-      "packagesPath": "C:\\Users\\Fabricio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fabricio\\Desktop\\ProyectoIrene\\GymVidaYSaludWEB\\GymVidaYSaludWEB\\obj\\",
+      "projectPath": "D:\\Uni. Fidelitas\\Universidad 8 cuatrimestre\\Programacion avanzada\\Proyecto\\WEB\\GymVYS\\GymVidaYSaludWEB\\GymVidaYSaludWEB.csproj",
+      "packagesPath": "C:\\Users\\pey09\\.nuget\\packages\\",
+      "outputPath": "D:\\Uni. Fidelitas\\Universidad 8 cuatrimestre\\Programacion avanzada\\Proyecto\\WEB\\GymVYS\\GymVidaYSaludWEB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Fabricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pey09\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8894,7 +8894,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

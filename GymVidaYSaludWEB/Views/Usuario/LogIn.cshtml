@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/GymVidaYSaludWEB.styles.css" asp-append-version="true" />
     <meta name="viewport" content="width=device-width" />
-    <title>Holi</title>
+    <title>Iniciar Sesion</title>
 </head>
 
 <body>
@@ -28,35 +28,42 @@
                     </div>
                     <div class="card-body">
 
-                        @using (Html.BeginForm("ConsultarLogin", "Usuario"))
+                        @using (Html.BeginForm("ConsultarUsuarioLogin", "Usuario"))
                         {
 
                             <div class="mb-3">
                                 <label class="text-center">Correo</label>
-                                @Html.TextBox("correo","",
+                                @Html.TextBox("Correo","",
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
                             </div>
                             <div class="mb-3">
                                 <label class="text-center">Contraseña</label>
-                                @Html.TextBox("constrasena","",
+                                @Html.TextBox("Contraseña","",
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
                             </div>
+                           
                             <div class="row">
                                 <div class="col">
-                                    <button class="btn btn-color">Iniciar</button>
+                                    <button class="btn btn-color">Iniciar Sesion</button>
                                 </div>
+                                <p>@ViewBag.Mensaje</p>
                                 <div class="col">
-                                    <a asp-controller="Usuario" asp-action="Register">¿Aun no tienes una cuenta?</a>
+                                    
+                                    <a asp-controller="Usuario" asp-action="RegistrarUsuario">¿Aun no tienes una cuenta?</a>
                                 </div>
                             </div>
+                            
+                            
                         }
                     </div>
                 </div>
