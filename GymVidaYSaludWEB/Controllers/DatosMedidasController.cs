@@ -31,11 +31,11 @@ namespace GymVidaYSaludWEB.Controllers
 
 
         [HttpGet]
-        public IActionResult ConsultarUnaMedida(string cedula)
+        public IActionResult ConsultarUnaMedida(long idMedidas)
         {
 
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
-            ruta += "/api/Proyecto/ConsultarUnaMedida?Cedula=" + cedula;
+            ruta += "/api/Proyecto/ConsultarUnaMedida?idMedidas=" + idMedidas;
             var resultado = modelo.ConsultarUnaMedida(ruta);
             return View(resultado);
 
@@ -74,15 +74,15 @@ namespace GymVidaYSaludWEB.Controllers
 
 
         [HttpGet]
-        public IActionResult ActualizarMedida(string cedula)
+        public IActionResult ActualizarMedida(long idmedidas, long idcliente)
         {
 
 
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
-            ruta += "/api/Proyecto/ConsultarUnaMedida?Cedula=" + cedula;
+            ruta += "/api/Proyecto/ConsultarUnaMedida?idMedidas=" + idmedidas;
             var resultado = modelo.ConsultarUnaMedida(ruta);
             string ruta1 = _configuration.GetSection("Llaves:RutaServicio").Value;
-            ruta1 += "/api/Proyecto/MedidaSelectListAll";
+            ruta1 += "/api/Proyecto/MedidaSelectListAll?idCliente="+ idcliente;
             var resultado1 = modelo.ConsultarMedidaSelectList(ruta1);
 
             ViewBag.Lista = resultado1;

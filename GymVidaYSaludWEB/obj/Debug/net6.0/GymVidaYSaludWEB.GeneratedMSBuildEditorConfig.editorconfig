@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\SEXTO CUATRI\PROGRAMACION AVANZADA EN WEB\PROYECTO\GymVYS\GymVidaYSaludWEB
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/ActualizarCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xBY3R1YWxpemFyQ2xpZW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/ConsultarTodosClientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xDb25zdWx0YXJUb2Rvc0NsaWVudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

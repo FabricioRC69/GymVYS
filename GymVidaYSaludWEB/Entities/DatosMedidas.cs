@@ -4,6 +4,7 @@ namespace GymVidaYSaludWEB.Entities
 {
     public class DatosMedidas
     {
+        public long idMedidas { get; set; }
         public decimal Peso { get; set; }
         public decimal Altura { get; set; } 
         public decimal Hombro { get; set; }
@@ -17,10 +18,11 @@ namespace GymVidaYSaludWEB.Entities
         public decimal MusloI { get; set; }
         public decimal PantorrillaD { get; set; }
         public decimal PantorrillaI { get; set; }
-        public string Cedula { get; set; } = string.Empty; 
+        public long idCliente { get; set; }
     }
     public class MedidasSelectObj
     {
+        public long idCliente { get; set; }
         public string Cedula { get; set; } = string.Empty;
         public string NombreCompleto { get; set; } = string.Empty;
     }

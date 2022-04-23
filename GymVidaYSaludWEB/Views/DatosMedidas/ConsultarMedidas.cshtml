@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Cedula)
+                @Html.DisplayNameFor(model => model.idCliente)
             </th><th>
                 @Html.DisplayNameFor(model => model.Peso)
             </th><th>
@@ -49,7 +49,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Cedula)
+                @Html.DisplayFor(modelItem => item.idCliente)
             </td><td>
                 @Html.DisplayFor(modelItem => item.Peso)
             </td><td>
@@ -78,8 +78,8 @@
                 @Html.DisplayFor(modelItem => item.PantorrillaD)
             </td>
             <td>
-                @Html.ActionLink("Editar", "ActualizarMedida", new { cedula=item.Cedula }) |
-                @Html.ActionLink("Información", "ConsultarUnaMedida", new { cedula=item.Cedula })
+                @Html.ActionLink("Editar", "ActualizarMedida", new { idmedidas=item.idMedidas, idcliente=item.idCliente  }) |
+                @Html.ActionLink("Información", "ConsultarUnaMedida", new { idmedidas=item.idMedidas })
             </td>
         </tr>
 }

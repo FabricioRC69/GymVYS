@@ -1,0 +1,93 @@
+﻿@model GymVidaYSaludWEB.Entities.DatosCliente
+@{
+    ViewData["Title"] = "Actualizar Cliente";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GymVidaYSaludWEB.styles.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Actualizar Cliente</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col"></div>
+            <div class="col">
+                <div class="card mt-5 cardLogin">
+                    <div class="card-header text-center">
+                        Actualizar Cliente
+                    </div>
+                    <div class="card-body">
+
+                        @using (Html.BeginForm("ActualizarCliente", "DatosClientes"))
+                        {
+
+                   
+                               <div class="mb-3">
+                                <label class="text-center">Cédula</label>
+                                @Html.TextBox("Cedula",Model.Cedula.ToString(),
+                            new
+                            {
+                            @class="form-control",
+                            @type="input",
+                            })
+                            </div>
+                               <div class="mb-3">
+                                <label class="text-center">Nombre Completo</label>
+                                @Html.TextBox("NombreCompleto",Model.NombreCompleto.ToString(),
+                            new
+                            {
+                            @class="form-control",
+                            @type="input",
+                            })
+                            </div>
+                                           <div class="mb-3">
+                                <label class="text-center">Numero de Contacto</label>
+                                @Html.TextBox("NumContacto",Model.NumContacto.ToString(),
+                            new
+                            {
+                            @class="form-control",
+                            @type="input",
+                            })
+                            </div>                <div class="mb-3">
+                                <label class="text-center">Correo electrónico</label>
+                                @Html.TextBox("Correo",Model.Correo.ToString(),
+                            new
+                            {
+                            @class="form-control",
+                            @type="input",
+                            })
+                            </div>
+                        
+                            @Html.TextBoxFor(m=>m.idCliente,
+                            new
+                            {
+                            @class="form-control",
+                            @type="input", hidden="true"
+                            })
+                            
+                                <div class="mb-3">
+                                    <button class="btn btn-warning" style="width: 100%">Actualizar Cliente</button>
+                                </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
+</html>

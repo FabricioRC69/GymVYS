@@ -67,6 +67,29 @@ namespace GymVidaYSaludWEB.Models
                 
 
         }
+        public string ActualizarCliente(string ruta, DatosCliente idCliente)
+        {
+            using (var client = new HttpClient())
+            {
+
+                JsonContent content = JsonContent.Create(idCliente);
+                HttpResponseMessage respuesta = client.PutAsync(ruta, content).Result;
+                if (respuesta.IsSuccessStatusCode)
+                {
+
+                    return "Actualización exitosa";
+
+                }
+                else
+                {
+                    return "Error";
+                }
+
+
+            }
+
+
+        }
         public string EliminarCliente(string ruta) {
             using (var client = new HttpClient())
             {

@@ -43,7 +43,7 @@ namespace GymVidaYSaludWEB.Models
                 }
                 foreach (var item in resp.ListaDatos)
                 {
-                    lista.Add(new SelectListItem { Value = item.Cedula, Text = item.Cedula +" | "+ item.NombreCompleto });
+                    lista.Add(new SelectListItem { Value = item.idCliente.ToString(), Text = item.Cedula +" | "+ item.NombreCompleto });
                 }
 
                 return lista;

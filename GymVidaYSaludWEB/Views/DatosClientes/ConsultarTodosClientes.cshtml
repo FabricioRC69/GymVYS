@@ -13,12 +13,17 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.idCliente)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Cedula)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NombreCompleto)
             </th>
-
+               <th>
+                @Html.DisplayNameFor(model => model.Dia_de_Pago_Cada_Mes)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Correo)
             </th>
@@ -28,20 +33,26 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+              <td>
+                @Html.DisplayFor(modelItem => item.idCliente)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Cedula)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NombreCompleto)
             </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Dia_de_Pago_Cada_Mes)
+            </td>
 
             <td>
                 @Html.DisplayFor(modelItem => item.Correo)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { cedula=item.Cedula }) |
-                @Html.ActionLink("Información", "ConsultarUnCliente", new { cedula=item.Cedula }) |
-                @Html.ActionLink("Borrar", "EliminarCliente", new { cedula=item.Cedula})
+                @Html.ActionLink("Editar", "ActualizarCliente", new { idCliente=item.idCliente }) |
+                @Html.ActionLink("Información", "ConsultarUnCliente", new { idCliente=item.idCliente }) |
+                @Html.ActionLink("Borrar", "EliminarCliente", new { idCliente=item.idCliente})
             </td>
         </tr>
 }

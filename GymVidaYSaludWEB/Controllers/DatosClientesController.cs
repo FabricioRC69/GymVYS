@@ -35,11 +35,11 @@ namespace GymVidaYSaludWEB.Controllers
 
 
         [HttpGet]
-        public IActionResult ConsultarUnCliente(string cedula)
+        public IActionResult ConsultarUnCliente(long idCliente)
         {
 
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
-            ruta += "/api/Proyecto/ConsultarUnCliente?Cedula=" + cedula;
+            ruta += "/api/Proyecto/ConsultarUnCliente?idCliente=" + idCliente;
             var resultado = modelo.ConsultarUnCliente(ruta);
             return View(resultado);
         }
@@ -69,11 +69,42 @@ namespace GymVidaYSaludWEB.Controllers
             }
         }
         [HttpGet]
-        public IActionResult EliminarCliente(string cedula) {
+        public IActionResult ActualizarCliente(long idcliente)
+        {
+
+
+            string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
+            ruta += "/api/Proyecto/ConsultarUnCliente?idCliente=" + idcliente;
+            var resultado = modelo.ConsultarUnCliente(ruta);
+
+            return View(resultado);
+
+        }
+
+        [HttpPost]
+        public IActionResult ActualizarCliente(DatosCliente cliente)
+        {
+            string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
+            ruta += "/api/Proyecto/ModificarCliente";
+
+            string mensaje = modelo.ActualizarCliente(ruta, cliente);
+            if (mensaje == "Actualización exitosa")
+            {
+
+                return RedirectToAction("ConsultarTodosClientes", "DatosClientes");
+            }
+            else
+            {
+
+                return View(cliente);
+            }
+        }
+        [HttpGet]
+        public IActionResult EliminarCliente(long idCliente) {
 
             string respuesta = "";
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
-            ruta += "/api/Proyecto/EliminarCliente?Cedula=" + cedula;
+            ruta += "/api/Proyecto/EliminarCliente?idCliente=" + idCliente;
             respuesta = modelo.EliminarCliente(ruta);
             return RedirectToAction("ConsultarTodosClientes", "DatosClientes");
 
