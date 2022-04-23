@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<GymVidaYSaludWEB.Entities.DatosCliente>
 
 @{
-    ViewData["Title"] = "ConsultarTodosClientes";
+    ViewData["Title"] = "Consultar Clientes";
 }
 
-<h1>ConsultarTodosClientes</h1>
+<h1>Clientes</h1>
 
 <p>
-    <a asp-action="RegistrarCliente">Create New</a>
+    <a asp-action="RegistrarCliente">Registrar nuevo cliente</a>
 </p>
 <table class="table">
     <thead>
@@ -39,7 +39,7 @@
                 @Html.DisplayFor(modelItem => item.Correo)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { cedula=item.Cedula }) |
+                @Html.ActionLink("Editar", "Edit", new { cedula=item.Cedula }) |
                 @Html.ActionLink("Información", "ConsultarUnCliente", new { cedula=item.Cedula }) |
                 @Html.ActionLink("Borrar", "EliminarCliente", new { cedula=item.Cedula})
             </td>

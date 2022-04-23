@@ -1,0 +1,93 @@
+﻿@model GymVidaYSaludWEB.Entities.DatosMedidas
+
+@{
+    ViewData["Title"] = "Consultar una medida";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Datos de la medida</title>
+</head>
+<body>
+
+<div>
+    <h4>Datos de las medidas</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Cédula
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cedula)
+        </dd>
+        <dt class = "col-sm-2">
+            Altura
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Altura)
+        </dd>
+        <dt class = "col-sm-2">
+            Pecho
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pecho)
+        </dd>
+        <dt class = "col-sm-2">
+            Cadera
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cadera)
+        </dd>
+        <dt class = "col-sm-2">
+            Abdomen
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Abdomen)
+        </dd>
+        <dt class = "col-sm-2">
+            Cintura
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cintura)
+        </dd>       <dt class = "col-sm-2">
+            Bicep Izquierdo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BicepI)
+        </dd>       <dt class = "col-sm-2">
+            Bicep Derecho
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BicepD)
+        </dd>       <dt class = "col-sm-2">
+            Muslo Izquierdo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MusloI)
+        </dd>       <dt class = "col-sm-2">
+            Muslo Derecho
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MusloD)
+        </dd>       <dt class = "col-sm-2">
+            Pantorrilla Izquierda
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PantorrillaI)
+        </dd>       <dt class = "col-sm-2">
+            Pantorrilla Derecha
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PantorrillaD)
+        </dd>  
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Editar", "ActualizarMedida", new { Model.Cedula }) |
+    
+    <a  asp-controller="DatosMedidas" asp-action="ConsultarMedidas">Ir a la lista</a>
+</div>
+</body>
+</html>

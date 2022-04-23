@@ -1,6 +1,6 @@
 ﻿@model GymVidaYSaludWEB.Entities.DatosCliente
 @{
-    Layout = null;
+    ViewData["Title"] = "Registrar Cliente";
 }
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/GymVidaYSaludWEB.styles.css" asp-append-version="true" />
     <meta name="viewport" content="width=device-width" />
-    <title>Holi</title>
+    <title>Registrar Cliente</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <div class="col">
                 <div class="card mt-5 cardLogin">
                     <div class="card-header text-center">
-                        Registrese
+                        Registrar Cliente
                     </div>
                     <div class="card-body">
 
@@ -68,15 +68,10 @@
                             })
                             </div>
 
-                            
-                            <div class="row">
                                 <div class="col">
-                                    <button class="btn btn-color">Registrarse</button>
+                                    <button class="btn btn-success" style="width:100%">Registrar Cliente</button>
                                 </div>
-                                <div class="col">
-                                    <a asp-controller="DatosCliente" asp-action="LogIn">¿Ya tiene una cuenta?</a>
-                                </div>
-                            </div>
+
                         }
                     </div>
                 </div>

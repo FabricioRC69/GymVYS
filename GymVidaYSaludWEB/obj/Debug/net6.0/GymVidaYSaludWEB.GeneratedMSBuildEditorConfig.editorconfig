@@ -8,61 +8,77 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GymVidaYSaludWEB
 build_property.RootNamespace = GymVidaYSaludWEB
-build_property.ProjectDir = D:\Uni. Fidelitas\Universidad 8 cuatrimestre\Programacion avanzada\Proyecto\WEB\GymVYS\GymVidaYSaludWEB\
+build_property.ProjectDir = D:\SEXTO CUATRI\PROGRAMACION AVANZADA EN WEB\PROYECTO\GymVYS\GymVidaYSaludWEB\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Uni. Fidelitas\Universidad 8 cuatrimestre\Programacion avanzada\Proyecto\WEB\GymVYS\GymVidaYSaludWEB
+build_property.MSBuildProjectDirectory = D:\SEXTO CUATRI\PROGRAMACION AVANZADA EN WEB\PROYECTO\GymVYS\GymVidaYSaludWEB
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/ConsultarTodosClientes.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/ConsultarTodosClientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xDb25zdWx0YXJUb2Rvc0NsaWVudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/ConsultarUnCliente.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/ConsultarUnCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xDb25zdWx0YXJVbkNsaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/EliminarCliente.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/EliminarCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xFbGltaW5hckNsaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/RegistrarCliente.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosClientes/RegistrarCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NDbGllbnRlc1xSZWdpc3RyYXJDbGllbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/Home/Index.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosMedidas/ActualizarMedida.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NNZWRpZGFzXEFjdHVhbGl6YXJNZWRpZGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosMedidas/ConsultarMedidas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NNZWRpZGFzXENvbnN1bHRhck1lZGlkYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosMedidas/ConsultarUnaMedida.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NNZWRpZGFzXENvbnN1bHRhclVuYU1lZGlkYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/DatosMedidas/RegistrarMedida.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NNZWRpZGFzXFJlZ2lzdHJhck1lZGlkYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/Home/Privacy.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/Shared/Error.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/Usuario/LogIn.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/Usuario/LogIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dJbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/Usuario/RegistrarUsuario.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/Usuario/RegistrarUsuario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xSZWdpc3RyYXJVc3VhcmlvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/_ViewImports.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/_ViewStart.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni. Fidelitas/Universidad 8 cuatrimestre/Programacion avanzada/Proyecto/WEB/GymVYS/GymVidaYSaludWEB/Views/Shared/_Layout.cshtml]
+[D:/SEXTO CUATRI/PROGRAMACION AVANZADA EN WEB/PROYECTO/GymVYS/GymVidaYSaludWEB/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ous6qy10d1
