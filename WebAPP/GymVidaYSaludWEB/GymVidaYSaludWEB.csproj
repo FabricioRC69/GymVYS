@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <None Include="wwwroot\images\Portada.png" />
+    <None Include="wwwroot\js\particulas\app.js" />
+    <None Include="wwwroot\js\particulas\particles.js" />
   </ItemGroup>
 
   <ItemGroup>

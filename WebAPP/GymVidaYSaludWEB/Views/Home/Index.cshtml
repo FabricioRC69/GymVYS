@@ -2,6 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+<head>
+    <link href="~/css/particulas.css" rel="stylesheet" />
+</head>
 <body>
 
     <header class="bg-dark py-1">
@@ -30,8 +33,6 @@
                         <h1 class="display-5 fw-bolder text-white mb-2">Gimnasio Vida y Salud Fitness + Gym</h1>
                         <p class="lead fw-normal text-white-50 mb-4">Un lugar para mejorar tu estilo de vida haciendo ejercicio!</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Nuestros servicios</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="pricing.html">Nuestros precios</a>
                         </div>
                     </div>
                 </div>
@@ -39,11 +40,22 @@
             </div>
         </div>
     </header>
+    <div>
     <div id="particles-js">
         <div id="clock" style="text-align:center;padding:1em 0;"> <br><br> <h2><a style="text-decoration:none; color:white"; href="https://www.zeitverschiebung.net/es/country/cr"><span style="color:white;">Hora actual en</span><br />Costa Rica</a></h2> <iframe style="color: white" src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=large&timezone=America%2FCosta_Rica" width="100%" height="140" frameborder="0" seamless></iframe> </div>
    </div>
+   </div>
 
 </body>
+
+
+
+@section Scripts{
+
+    <script src="~/js/particulas/particles.js"></script>
+    <script src="~/js/particulas/app.js"></script>
+    
+}
 
 
 

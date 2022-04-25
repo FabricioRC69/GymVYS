@@ -7,140 +7,159 @@
 
 <html>
 
-<head>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/GymVidaYSaludWEB.styles.css" asp-append-version="true" />
-    <title>Actualizar Medida</title>
-</head>
-
 <body>
     <div class="container">
 
-        <div class="row">
-
-            <div class="col"></div>
-            <div class="col">
-                <div class="card mt-5 cardLogin">
-                    <div class="card-header text-center">
-                        Actualizar Medida
-                    </div>
-                    <div class="card-body">
-
-                        @using (Html.BeginForm("ActualizarMedida", "DatosMedidas"))
+         <div class="row mt-3">
+            <div class="col-xl-7 mx-auto">
+                <div class="card border-top border-0 border-4 border-warning">
+                    <div class="card-body p-5">
+                        <div class="card-title d-flex align-items-center">
+                            <div>
+                                <i class=""></i>
+                            </div>
+                            <h5 class="mb-0 text-warning">Actualizar Medida</h5>
+                        </div>
+                        <hr>
+                        @using (Html.BeginForm("ActualizarMedida", "DatosMedidas", FormMethod.Post, htmlAttributes: new { @class = "row g-3" }))
                         {
 
-                            <div class="mb-3">
-                                <label class="text-center">Cédula de Cliente Disponible</label>
+                            <div class="col-md-6">
+
+                                <label class="text-center form-label">Cédula de Cliente Disponible</label>
+
                                 @Html.DropDownListFor(m => m.idCliente, ViewBag.Lista as List<SelectListItem>, new { @class="form-control", required="required"})
+
                             </div>
 
                    
-                            <div class="mb-3">
-                                <label class="text-center">Peso</label>
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Peso</label>
                                 @Html.TextBox("Peso",Model.Peso.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
                             </div>
-                               <div class="mb-3">
-                                <label class="text-center">Altura</label>
+                               <div class="col-md-6">
+                                <label class="text-center form-label">Altura</label>
                                 @Html.TextBox("Altura",Model.Altura.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
                             </div>
-                               <div class="mb-3">
-                                <label class="text-center">Hombro</label>
+                               <div class="col-md-6">
+                                <label class="text-center form-label">Hombro</label>
                                 @Html.TextBox("Hombro",Model.Hombro.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
                             </div>
-                               <div class="mb-3">
-                                <label class="text-center">Pecho</label>
+                               <div class="col-md-6">
+                                <label class="text-center form-label">Pecho</label>
                                 @Html.TextBox("Pecho",Model.Pecho.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Cadera</label>
+                            </div>                
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Cadera</label>
                                 @Html.TextBox("Cadera",Model.Cadera.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Abdomen</label>
+                            </div>                
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Abdomen</label>
                                 @Html.TextBox("Abdomen",Model.Abdomen.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Cintura</label>
+                            </div>                
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Cintura</label>
                                 @Html.TextBox("Cintura",Model.Cintura.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Bicep Derecho</label>
+                            </div>               
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Bicep Derecho</label>
                                 @Html.TextBox("BicepD",Model.BicepD.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Bicep Izquierdo</label>
+                            </div>                
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Bicep Izquierdo</label>
                                 @Html.TextBox("BicepI",Model.BicepI.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Muslo Derecho</label>
+                            </div>                
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Muslo Derecho</label>
                                 @Html.TextBox("MusloD",Model.MusloD.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Muslo Izquierdo</label>
+                            </div>                
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Muslo Izquierdo</label>
                                 @Html.TextBox("MusloI",Model.MusloI.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Pantorrilla Derecha</label>
+                            </div>                
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Pantorrilla Derecha</label>
                                 @Html.TextBox("PantorrillaD",Model.PantorrillaD.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Pantorrilla Izquierda</label>
+                            </div>                
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Pantorrilla Izquierda</label>
                                 @Html.TextBox("PantorrillaI",Model.PantorrillaI.ToString(),
                             new
                             {
                             @class="form-control",
+                            required="required",
                             @type="input",
                             })
                             </div>
@@ -156,12 +175,19 @@
                                     <button class="btn btn-warning" style="width: 100%">Actualizar Medida</button>
                                 </div>
                         }
+
+                         <div class="col">
+                                <a class="btn text-white btn-lg btn-block mt-3 h6" style="background-color:#212529; width:100%; font-size:15px" asp-controller="DatosMedidas" asp-action="ConsultarMedidas">Volver</a>
+                            </div>
                     </div>
                 </div>
             </div>
+          </div>
+          </div>
+
+
             <div class="col"></div>
-        </div>
-    </div>
+ 
 
 </body>
 

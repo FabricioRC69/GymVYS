@@ -4,17 +4,25 @@
 @{
     ViewData["Title"] = "Consultar Medidas";
 }
+
+@section Styles{
+
+      <link rel="stylesheet" href="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.css" />
+
+}
+
 <div class="container">
-<h1>Consulta de Medidas</h1>
+
+<p class="text-center h2 p-4">Tabla de Medidas</p>
 
 @if (ViewBag.Rol == "1")
 {
 <p>
-    <a asp-action="RegistrarMedida">Registrar medida</a>
+    <a class="btn btn-success" asp-action="RegistrarMedida">Registrar medida</a>
 </p>
 }
 
-<table class="table">
+<table class="table display" id="myTable">
     <thead>
         <tr>
             <th>
@@ -85,59 +93,71 @@
                     }
                 }
                 <td>
-                    @Html.DisplayFor(modelItem => item.Peso)
+                    @Html.DisplayFor(modelItem => item.Peso) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Altura)
+                    @Html.DisplayFor(modelItem => item.Altura) m
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Hombro)
+                    @Html.DisplayFor(modelItem => item.Hombro) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Pecho)
+                    @Html.DisplayFor(modelItem => item.Pecho) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cadera)
+                    @Html.DisplayFor(modelItem => item.Cadera) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Abdomen)
+                    @Html.DisplayFor(modelItem => item.Abdomen) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cintura)
+                    @Html.DisplayFor(modelItem => item.Cintura) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BicepI)
+                    @Html.DisplayFor(modelItem => item.BicepI) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BicepD)
+                    @Html.DisplayFor(modelItem => item.BicepD) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MusloI)
+                    @Html.DisplayFor(modelItem => item.MusloI) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MusloD)
+                    @Html.DisplayFor(modelItem => item.MusloD) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PantorrillaI)
+                    @Html.DisplayFor(modelItem => item.PantorrillaI) cm
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PantorrillaD)
+                    @Html.DisplayFor(modelItem => item.PantorrillaD) cm
                 </td>
                 @if (ViewBag.Rol == "1")
                 {
 
                     <td>
-                        @Html.ActionLink("Editar", "ActualizarMedida", new { idmedidas=item.idMedidas, idcliente=item.idCliente  }) |
-                        @Html.ActionLink("Información", "ConsultarUnaMedida", new { idmedidas=item.idMedidas })
+                        @Html.ActionLink("Editar", "ActualizarMedida", new { idmedidas=item.idMedidas, idcliente=item.idCliente  }, new {@class="btn btn-warning"}) 
+                        <br>
+                        @Html.ActionLink("Información", "ConsultarUnaMedida", new { idmedidas=item.idMedidas }, new {@class="btn btn-primary"})
+                   
                     </td>
                 }
                 else
                 {
-                    <td>@Html.ActionLink("Información", "ConsultarUnaMedida", new { idmedidas=item.idMedidas }) </td>
+                    <td>@Html.ActionLink("Información", "ConsultarUnaMedida", new { idmedidas=item.idMedidas } , new {@class="btn btn-primary"}) </td>
                 }
 
             </tr>
         }
     </tbody>
 </table>
+
 </div>
+
+@section Scripts{
+
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.js"></script>
+    <script src="~/js/datatable.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+}

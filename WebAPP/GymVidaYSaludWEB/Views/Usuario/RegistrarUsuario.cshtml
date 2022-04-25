@@ -58,7 +58,7 @@
                             {
                             @class="form-control",
                             required="required",
-                            @type="input",
+                            @type="password",
                             })
                             </div>
                             <div class="mb-3">
@@ -74,15 +74,14 @@
                             @type="input",
                             })
                             </div>
-                            <div class="row">
-
-                                <button class="btn btn-success" style="width: 100%">Registrar Usuario</button>
-
-                                @*        <div class="col">
-                                    <a asp-controller="Usuario" asp-action="LogIn">¿Ya tiene una cuenta?</a>
-                                    </div>*@
+                            <div class="col-12">
+                                <button class="btn btn-success px-5" style="width: 100%">Registrar usuario</button>
                             </div>
                         }
+
+                           <div class="col">
+                                <a class="btn text-white btn-lg btn-block mt-3 h6" style="background-color:#212529; width:100%; font-size:15px" asp-controller="Usuario" asp-action="ConsultarUsuarios">Volver</a>
+                            </div>
                     </div>
                 </div>
             </div>
