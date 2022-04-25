@@ -1,0 +1,75 @@
+﻿@model IEnumerable<GymVidaYSaludWEB.Entities.UsuariosObj>
+
+@{
+    ViewData["Title"] = "Consultar Usuarios";
+}
+
+<div class="container">
+    
+<p class="text-center h2 p-4">Tabla de Usuarios del GYM</p>
+@if (ViewBag.Rol == "1")
+{
+<p>
+    <a asp-action="RegistrarUsuario">Registrar nuevo usuario</a>
+</p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Contraseña)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rol)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Correo)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.Contraseña)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rol)
+                </td>
+                @if (ViewBag.Rol == "1")
+                {
+
+                    <td>
+                        @Html.ActionLink("Editar", "ActualizarUsuario", new { idUsuario=item.idUsuario}) |
+                        @Html.ActionLink("Información", "ConsultarUnUsuario", new { idUsuario=item.idUsuario }) |
+                        @Html.ActionLink("Borrar", "EliminarUsuario", new { idUsuario=item.idUsuario})
+                    </td>
+                } else
+                {
+                    <td> @Html.ActionLink("Información", "ConsultarUnUsuario", new { idUsuario=item.idUsuario }) </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+</div>

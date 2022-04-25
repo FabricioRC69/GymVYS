@@ -1,44 +1,66 @@
-﻿@model IEnumerable<GymVidaYSaludWEB.Entities.DatosMedidas>
+﻿@using GymVidaYSaludWEB.Entities
+@model IEnumerable<GymVidaYSaludWEB.Entities.DatosMedidas>
 
 @{
     ViewData["Title"] = "Consultar Medidas";
 }
-
+<div class="container">
 <h1>Consulta de Medidas</h1>
 
+@if (ViewBag.Rol == "1")
+{
 <p>
     <a asp-action="RegistrarMedida">Registrar medida</a>
 </p>
+}
+
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.idCliente)
-            </th><th>
+            </th>
+
+            <th>
+                Cédula
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Peso)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Altura)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Hombro)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Pecho)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Cadera)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Abdomen)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Cintura)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.BicepI)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.BicepD)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.MusloI)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.MusloD)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.PantorrillaI)
-            </th><th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.PantorrillaD)
             </th>
 
@@ -46,42 +68,76 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.idCliente)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.Peso)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.Altura)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.Hombro)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.Pecho)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.Cadera)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.Abdomen)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.Cintura)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.BicepI)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.BicepD)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.MusloI)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.MusloD)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.PantorrillaI)
-            </td><td>
-                @Html.DisplayFor(modelItem => item.PantorrillaD)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "ActualizarMedida", new { idmedidas=item.idMedidas, idcliente=item.idCliente  }) |
-                @Html.ActionLink("Información", "ConsultarUnaMedida", new { idmedidas=item.idMedidas })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idCliente)
+                </td>
+                @foreach (var cliente in ViewBag.clientesMedidas)
+                {
+                    @if (@cliente.idCliente == item.idCliente)
+                    {
+
+                        <td>
+                            @cliente.Cedula
+                        </td>
+                    }
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Peso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Altura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hombro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pecho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cadera)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Abdomen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cintura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BicepI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BicepD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MusloI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MusloD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PantorrillaI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PantorrillaD)
+                </td>
+                @if (ViewBag.Rol == "1")
+                {
+
+                    <td>
+                        @Html.ActionLink("Editar", "ActualizarMedida", new { idmedidas=item.idMedidas, idcliente=item.idCliente  }) |
+                        @Html.ActionLink("Información", "ConsultarUnaMedida", new { idmedidas=item.idMedidas })
+                    </td>
+                }
+                else
+                {
+                    <td>@Html.ActionLink("Información", "ConsultarUnaMedida", new { idmedidas=item.idMedidas }) </td>
+                }
+
+            </tr>
+        }
     </tbody>
 </table>
+</div>

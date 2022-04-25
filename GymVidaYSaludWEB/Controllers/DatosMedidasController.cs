@@ -26,6 +26,18 @@ namespace GymVidaYSaludWEB.Controllers
             ruta += "/api/Proyecto/ConsultarTodasMedidas";
             var resultado = modelo.ConsultarMedidas(ruta);
 
+            string ruta2 = _configuration.GetSection("Llaves:RutaServicio").Value;
+            ruta2 += "/api/Proyecto/ConsultarTodosClientes";
+            var resultado2 = modelo.ConsultarTodosClientesMedidas(ruta2);
+            ViewBag.clientesMedidas = resultado2;
+
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
+
             return View(resultado);
         }
 
@@ -37,6 +49,14 @@ namespace GymVidaYSaludWEB.Controllers
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ConsultarUnaMedida?idMedidas=" + idMedidas;
             var resultado = modelo.ConsultarUnaMedida(ruta);
+
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
+
             return View(resultado);
 
         }
@@ -44,6 +64,12 @@ namespace GymVidaYSaludWEB.Controllers
         [HttpGet]
         public IActionResult RegistrarMedida()
         {
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/MedidaSelectList";
             var resultado = modelo.ConsultarMedidaSelectList(ruta);
@@ -77,7 +103,12 @@ namespace GymVidaYSaludWEB.Controllers
         public IActionResult ActualizarMedida(long idmedidas, long idcliente)
         {
 
-
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ConsultarUnaMedida?idMedidas=" + idmedidas;
             var resultado = modelo.ConsultarUnaMedida(ruta);

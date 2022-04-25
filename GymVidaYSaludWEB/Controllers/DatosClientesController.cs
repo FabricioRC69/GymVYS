@@ -29,6 +29,13 @@ namespace GymVidaYSaludWEB.Controllers
             ruta += "/api/Proyecto/ConsultarTodosClientes";
             var resultado = modelo.ConsultarTodosClientes(ruta);
 
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
+
             return View(resultado);
         }
 
@@ -41,6 +48,14 @@ namespace GymVidaYSaludWEB.Controllers
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ConsultarUnCliente?idCliente=" + idCliente;
             var resultado = modelo.ConsultarUnCliente(ruta);
+
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
+
             return View(resultado);
         }
 
@@ -48,6 +63,12 @@ namespace GymVidaYSaludWEB.Controllers
         [HttpGet]
         public IActionResult RegistrarCliente()
         {
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
             var objeto = new DatosCliente();
             return View(objeto);
         }
@@ -71,7 +92,12 @@ namespace GymVidaYSaludWEB.Controllers
         [HttpGet]
         public IActionResult ActualizarCliente(long idcliente)
         {
-
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
 
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ConsultarUnCliente?idCliente=" + idcliente;

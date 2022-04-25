@@ -20,12 +20,47 @@ namespace GymVidaYSaludWEB.Controllers
 
         public IActionResult Index()
         {
-           
-                return View();
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
+            return View();
         }
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+        public IActionResult AcercaNosotros()
+        {
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
+            return View();
+        }
+        public IActionResult Contacto()
+        {
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
+            return View();
+        }
+        public IActionResult Membresias()
+        {
+            var usuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.Usuario = usuario;
+            var correo = HttpContext.Session.GetString("Correo");
+            ViewBag.Correo = correo;
+            var rol = HttpContext.Session.GetString("Rol");
+            ViewBag.Rol = rol;
             return View();
         }
 

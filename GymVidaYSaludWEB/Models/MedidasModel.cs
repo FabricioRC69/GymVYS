@@ -116,6 +116,26 @@ namespace GymVidaYSaludWEB.Models
 
 
         }
+        public List<MedidasSelectObj> ConsultarTodosClientesMedidas(string ruta)
+        {
+            RespuestaDatosMedidaSelectList resp = new RespuestaDatosMedidaSelectList();
+            List<RespuestaDatosMedidaSelectList> lista = new List<RespuestaDatosMedidaSelectList>();
+
+            using (var http = new HttpClient())
+            {
+
+                HttpResponseMessage respuesta = http.GetAsync(ruta).Result;
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    var datos = respuesta.Content.ReadAsStringAsync().Result;
+                    resp = JsonConvert.DeserializeObject<RespuestaDatosMedidaSelectList>(datos);
+
+                }
+
+            }
+            return resp.ListaDatos;
+
+        }
 
     }
 }

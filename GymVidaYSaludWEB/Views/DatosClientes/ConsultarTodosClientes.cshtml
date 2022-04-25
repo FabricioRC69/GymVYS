@@ -4,12 +4,23 @@
     ViewData["Title"] = "Consultar Clientes";
 }
 
-<h1>Clientes</h1>
+@section Styles{
 
+      <link rel="stylesheet" href="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.css" />
+}
+
+<div class="container">
+    
+<p class="text-center h2 p-4">Tabla de Clientes</p>
+@if (ViewBag.Rol == "1")
+{
 <p>
-    <a asp-action="RegistrarCliente">Registrar nuevo cliente</a>
+    <a class="btn btn-success" asp-action="RegistrarCliente">Registrar nuevo cliente</a>
 </p>
-<table class="table">
+}
+
+
+<table class="table display" id="myTable">
     <thead>
         <tr>
             <th>
@@ -21,7 +32,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.NombreCompleto)
             </th>
-               <th>
+            <th>
                 @Html.DisplayNameFor(model => model.Dia_de_Pago_Cada_Mes)
             </th>
             <th>
@@ -31,30 +42,80 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-              <td>
-                @Html.DisplayFor(modelItem => item.idCliente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cedula)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreCompleto)
-            </td>
-              <td>
-                @Html.DisplayFor(modelItem => item.Dia_de_Pago_Cada_Mes)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cedula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreCompleto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dia_de_Pago_Cada_Mes)
+                </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Correo)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "ActualizarCliente", new { idCliente=item.idCliente }) |
-                @Html.ActionLink("Información", "ConsultarUnCliente", new { idCliente=item.idCliente }) |
-                @Html.ActionLink("Borrar", "EliminarCliente", new { idCliente=item.idCliente})
-            </td>
-        </tr>
-}
+                <td>
+                    @Html.DisplayFor(modelItem => item.Correo)
+                </td>
+                @if (ViewBag.Rol == "1")
+                {
+
+                    <td>
+                        @Html.ActionLink("Editar", "ActualizarCliente", new { idCliente=item.idCliente }, new {@class="btn btn-warning"}) 
+                        @Html.ActionLink("Información", "ConsultarUnCliente", new { idCliente=item.idCliente }, new {@class="btn btn-primary"})
+                        @Html.ActionLink("Borrar", "EliminarCliente", new { idCliente=item.idCliente}, new {@class="btn btn-danger delete-confirmation"})
+                    </td>
+                } else
+                {
+                    <td> @Html.ActionLink("Información", "ConsultarUnCliente", new { idCliente=item.idCliente }, new {@class="btn btn-primary"}) </td>
+                }
+            </tr>
+        }
     </tbody>
 </table>
+
+</div>
+
+@section Scripts{
+
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.js"></script>
+    <script src="~/js/datatable.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+<script> /*delete-confirmation script*/
+
+    $('.delete-confirmation').on('click',function (e){
+        e.preventDefault();
+        var self = $(this);
+        Swal.fire({
+            title: '¿Estas seguro?',
+            html:'¡No podrás deshacer esto! Se eliminará al cliente de forma permanente.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, eliminar!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Eliminado!',
+                    'Los datos fueron eliminados',
+                    'success',
+
+                )
+                location.href = self.attr('href');
+            }
+        })
+    });
+
+</script>
+
+}
+ 
+

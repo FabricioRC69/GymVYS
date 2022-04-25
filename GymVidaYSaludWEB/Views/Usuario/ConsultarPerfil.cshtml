@@ -1,0 +1,33 @@
+﻿@model GymVidaYSaludWEB.Entities.UsuariosObj
+@{
+    ViewData["Title"] = "Perfil Usuario";
+}
+
+@section Styles {
+        <link rel="stylesheet" href="~/css/perfil.css" />
+}
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-7">
+            <div class="card p-3 py-4">
+                <div class="text-center"> <img src="https://i.ibb.co/HzbkHxq/user3.png" width="100" class="rounded-circle"> </div>
+                <div class="text-center mt-3"> 
+                    @if(ViewBag.Rol == "1"){
+                        <span class="bg-secondary p-1 px-4 rounded text-white">Coach Mayor</span>
+                    } else
+                    {
+                         <span class="bg-secondary p-1 px-4 rounded text-white">Coach Menor</span>
+                    }
+
+                    <h5 class="mt-2 mb-0">@ViewBag.Usuario</h5> <span>Entrenador</span>
+                    <div class="px-4 mt-1">
+                        <p class="fonts"><span style="font-weight:bold">Correo Electrónico:</span> @ViewBag.Correo</p>
+                    </div>
+                     @Html.ActionLink("Actualizar Perfil", "ActualizarPerfil", new { ViewBag.idUsuario}, new {@class="btn btn-outline-primary px-4"}) 
+                     @Html.ActionLink("Cerrar Sesión", "CerrarSesion", new { }, new {@class="btn btn-outline-danger px-4"}) 
+                     
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

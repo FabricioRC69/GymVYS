@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vt0dhTL2h65Wx6zuo+2J1GH/afVSo/BNcuW8FBwxJY5jvNCSimOuxUaKW4+X9jOzMw8XV3zCt4gcxjSWWS1qYQ==",
+  "dgSpecHash": "kaw4TvyESRc8JfDDxUbpGdKPElOOAPJRb+j2CbTO2hxJX0jiwWdClXhNqsGfjtnd6lhmKCG2U+JDTGw4tVVhuA==",
   "success": true,
-  "projectFilePath": "D:\\SEXTO CUATRI\\PROGRAMACION AVANZADA EN WEB\\PROYECTO\\GymVYS\\GymVidaYSaludWEB\\GymVidaYSaludWEB.csproj",
+  "projectFilePath": "D:\\SEXTO CUATRI\\PROGRAMACION AVANZADA EN WEB\\PROYECTO\\Proyecto\\GymVYS\\GymVidaYSaludWEB\\GymVidaYSaludWEB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Steve AS\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\Steve AS\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

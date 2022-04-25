@@ -7,37 +7,35 @@
 
 <html>
 
-<head>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/GymVidaYSaludWEB.styles.css" asp-append-version="true" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Registrar Medida</title>
-</head>
 
 <body>
     <div class="container">
 
-        <div class="row">
 
-            <div class="col"></div>
-            <div class="col">
-                <div class="card mt-5 cardLogin">
-                    <div class="card-header text-center">
-                        Registrar Medida
-                    </div>
-                    <div class="card-body">
-
-                        @using (Html.BeginForm("RegistrarMedida", "DatosMedidas"))
-                        {
-
-                            <div class="mb-3">
-                                <label class="text-center">Cédula de Cliente Disponible</label>
-                                @Html.DropDownListFor(m => m.idCliente, ViewBag.Lista as List<SelectListItem>, new { @class="form-control",required="required" })
+        <div class="row mt-3">
+            <div class="col-xl-7 mx-auto">
+                <div class="card border-top border-0 border-4 border-success">
+                    <div class="card-body p-5">
+                        <div class="card-title d-flex align-items-center">
+                            <div>
+                                <i class=""></i>
                             </div>
-                            
-                            <div class="mb-3">
-                                <label class="text-center">Peso</label>
+                            <h5 class="mb-0 text-success">Registrar Medidas</h5>
+                        </div>
+                        <hr>
+                        @using (Html.BeginForm("RegistrarMedida", "DatosMedidas", FormMethod.Post, htmlAttributes: new { @class = "row g-3" }))
+                        {
+                            <div class="col-md-6">
+
+                                <label class="text-center form-label">Cédula de Cliente Disponible</label>
+
+                                @Html.DropDownListFor(m => m.idCliente, ViewBag.Lista as List<SelectListItem>, new { @class="form-control",required="required" })
+
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Peso</label>
                                 @Html.TextBox("Peso","",
                             new
                             {
@@ -45,8 +43,8 @@
                             @type="input",
                             })
                             </div>
-                            <div class="mb-3">
-                                <label class="text-center">Altura</label>
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Altura</label>
                                 @Html.TextBox("Altura","",
                             new
                             {
@@ -54,8 +52,8 @@
                             @type="input",
                             })
                             </div>
-                            <div class="mb-3">
-                                <label class="text-center">Hombro</label>
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Hombro</label>
                                 @Html.TextBox("Hombro","",
                             new
                             {
@@ -63,80 +61,80 @@
                             @type="input",
                             })
                             </div>
-                            <div class="mb-3">
-                                <label class="text-center">Pecho</label>
+                            <div class="col-md-6">
+                                <label class="text-center form-label">Pecho</label>
                                 @Html.TextBox("Pecho","",
                             new
                             {
                             @class="form-control",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Cadera</label>
+                            </div>                <div class="col-md-6">
+                                <label class="text-center form-label">Cadera</label>
                                 @Html.TextBox("Cadera","",
                             new
                             {
                             @class="form-control",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Abdomen</label>
+                            </div>                <div class="col-md-6">
+                                <label class="text-center form-label">Abdomen</label>
                                 @Html.TextBox("Abdomen","",
                             new
                             {
                             @class="form-control",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Cintura</label>
+                            </div>                <div class="col-md-6">
+                                <label class="text-center form-label">Cintura</label>
                                 @Html.TextBox("Cintura","",
                             new
                             {
                             @class="form-control",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Bicep Derecho</label>
+                            </div>                <div class="col-md-6">
+                                <label class="text-center form-label">Bicep Derecho</label>
                                 @Html.TextBox("BicepD","",
                             new
                             {
                             @class="form-control",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Bicep Izquierdo</label>
+                            </div>                <div class="col-md-6">
+                                <label class="text-center form-label">Bicep Izquierdo</label>
                                 @Html.TextBox("BicepI","",
                             new
                             {
                             @class="form-control",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Muslo Derecho</label>
+                            </div>                <div class="col-md-6">
+                                <label class="text-center form-label">Muslo Derecho</label>
                                 @Html.TextBox("MusloD","",
                             new
                             {
                             @class="form-control",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Muslo Izquierdo</label>
+                            </div>                <div class="col-md-6">
+                                <label class="text-center form-label">Muslo Izquierdo</label>
                                 @Html.TextBox("MusloI","",
                             new
                             {
                             @class="form-control",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Pantorrilla Derecha</label>
+                            </div>                <div class="col-md-6">
+                                <label class="text-center form-label">Pantorrilla Derecha</label>
                                 @Html.TextBox("PantorrillaD","",
                             new
                             {
                             @class="form-control",
                             @type="input",
                             })
-                            </div>                <div class="mb-3">
-                                <label class="text-center">Pantorrilla Izquierda</label>
+                            </div>                <div class="col-md-6">
+                                <label class="text-center form-label">Pantorrilla Izquierda</label>
                                 @Html.TextBox("PantorrillaI","",
                             new
                             {
@@ -145,20 +143,23 @@
                             })
                             </div>
 
-                                <div class="row">
-                                    <button class="btn btn-success" style="width: 100%">Registrar Medida</button>
-                                </div>
+                            <div class="col-12">
+                                <button class="btn btn-success px-5" style="width: 100%">Registrar Medida</button>
+                            </div>
 
                         }
                     </div>
+
                 </div>
             </div>
-            <div class="col"></div>
         </div>
+
+
     </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <div class="col"></div>
+
+
 </body>
 
 </html>

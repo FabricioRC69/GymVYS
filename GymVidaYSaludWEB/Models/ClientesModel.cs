@@ -27,6 +27,7 @@ namespace GymVidaYSaludWEB.Models
             return resp.ListaDatos;
 
         }
+
         public DatosCliente ConsultarUnCliente(string ruta)
         {
             RespuestaDatosClientes resp = new RespuestaDatosClientes();

@@ -1,0 +1,80 @@
+﻿@model GymVidaYSaludWEB.Entities.UsuariosObj
+
+@{
+    ViewData["Title"] = "Consultar Usuario";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Datos del usuario</title>
+</head>
+<div class="container">
+    <p class="text-center h2 p-4">Información del usuario</p>
+    <body>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-8 border">
+
+                            <p class="h4 mt-4">
+                                Nombre de Usuario: <span style="color:gray; margin-left:5%;">@Html.DisplayFor(model => model.NombreUsuario)</span>
+                            </p>
+                            <p class="h4 mt-4">
+                                Correo electrónico: <span style="color:gray; margin-left:5%;">@Html.DisplayFor(model => model.Correo)</span>
+                            </p>
+                            <p class="h4 mt-4">
+                                Contraseña: <span style="color:gray; margin-left:5%;">@Html.DisplayFor(model => model.Contraseña)</span>
+                            </p>
+                            <p class="h4 mt-4">
+                                Rol: 
+                                    @if (Model.Rol.ToString() == "1")
+                                    {    
+                                    <span style="color:gray; margin-left:5%;">Coach Mayor</span>
+                                } else
+                                {
+                                    <span style="color:gray; margin-left:5%;">Coach Menor</span>
+                                }
+
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row gx-5 align-items-center justify-content-center">
+                    @if (ViewBag.Rol == "1")
+                    {
+                        <div class="mt-5 col-lg-8 col-xl-7 col-xxl-6 ">
+                              <div>
+                                @Html.ActionLink("Editar", "ActualizarUsuario", new { Model.idUsuario}, new {@class="btn btn-warning btn-lg btn-block", @style="width:100%"})
+                            </div>
+                            
+                            <div>
+                                <a class="btn text-white btn-lg btn-block mt-3" style="background-color:#212529; width:100%;" asp-controller="usuario" asp-action="ConsultarUsuarios">Volver</a>
+                            </div>
+                          
+                            
+                        </div>
+
+
+                    }
+                    else
+                    {
+                        <a class="btn text-white" style="background-color:#212529" asp-controller="DatosClientes" asp-action="ConsultarTodosClientes">Volver</a>
+                    }
+                </div>
+            </div>
+        </div>
+
+            </body>
+</div>
+
+
+</div>
+</html>

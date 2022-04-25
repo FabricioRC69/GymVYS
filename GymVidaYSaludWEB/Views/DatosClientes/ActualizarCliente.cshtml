@@ -14,7 +14,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>Actualizar Cliente</title>
 </head>
-
+<div class="container">
+    
 <body>
     <div class="container">
 
@@ -27,7 +28,7 @@
                         Actualizar Cliente
                     </div>
                     <div class="card-body">
-
+                      
                         @using (Html.BeginForm("ActualizarCliente", "DatosClientes"))
                         {
 
@@ -78,16 +79,16 @@
                                 <div class="mb-3">
                                     <button class="btn btn-warning" style="width: 100%">Actualizar Cliente</button>
                                 </div>
+                                 
                         }
+                          <a class="btn text-white btn-lg btn-block mt-3 h6" style="background-color:#212529; width:100%; font-size:15px" asp-controller="DatosClientes" asp-action="ConsultarTodosClientes">Volver</a>
                     </div>
                 </div>
             </div>
             <div class="col"></div>
         </div>
     </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 
 </html>
+</div>

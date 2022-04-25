@@ -91,9 +91,17 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Editar", "ActualizarMedida", new { Model.idMedidas}) |
+          @if (ViewBag.Rol == "1")
+                {
+
+                       @Html.ActionLink("Editar", "ActualizarMedida", new { Model.idMedidas})
     
-    <a  asp-controller="DatosMedidas" asp-action="ConsultarMedidas">Ir a la lista</a>
+                        <a  asp-controller="DatosMedidas" asp-action="ConsultarMedidas">Ir a la lista</a>
+                } else
+                {
+                      <a  asp-controller="DatosMedidas" asp-action="ConsultarMedidas">Ir a la lista</a>
+                }
+
 </div>
 </body>
 </html>

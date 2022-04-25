@@ -1,0 +1,68 @@
+﻿@model GymVidaYSaludWEB.Entities.UsuariosObj
+@{
+    ViewData["Title"] = "Actualizar Perfil";
+}
+
+@section Styles {
+<link rel="stylesheet" href="~/css/perfil.css" />
+}
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card p-3 py-4">
+                <div class="text-center"> <img src="https://i.ibb.co/HzbkHxq/user3.png" width="100" class="rounded-circle"> </div>
+                @using (Html.BeginForm("ActualizarPerfil", "Usuario", FormMethod.Post, htmlAttributes: new { @class = "mt-5" }))
+                {
+
+                    <div class="mb-3">
+                        <label class="text-center mb-3">Nombre Completo</label>
+                        @Html.TextBox("NombreUsuario",Model.NombreUsuario.ToString(),
+                    new
+                    {
+                    @class="form-control",
+                    @type="input",
+                    })
+                    </div>
+                    <div class="mb-3">
+                        <label class="text-center mb-3">Correo electrónico</label>
+                        @Html.TextBox("Correo",Model.Correo.ToString(),
+                    new
+                    {
+                    @class="form-control",
+                    @type="input",
+                    })
+                    </div>
+                    <div class="mb-3">
+                        <label class="text-center mb-3">Contraseña</label>
+                        @Html.TextBox("Contraseña",Model.Contraseña.ToString(),
+                    new
+                    {
+                    @class="form-control",
+                    @type="password",
+                    })
+                    </div>
+
+
+
+                    @Html.TextBoxFor(m=>m.idUsuario,
+                new
+                {
+                @class="form-control",
+                @type="input", hidden="true"
+                })
+
+                    <div class="mb-3">
+                        <button class="btn btn-warning" style="width: 100%">Actualizar Usuario</button>
+                    </div>
+                    <div class="mb-3">
+                        @Html.ActionLink("Volver", "ConsultarPerfil", new { ViewBag.idUsuario}, new {@class="btn btn-dark", @style="width: 100% !important"})
+                    </div>
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
