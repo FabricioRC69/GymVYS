@@ -15,61 +15,73 @@
 </head>
 
 
-    <body>
-        <div class="container">
+<body>
+    <div class="container">
 
-            <div class="row">
+        <div class="row">
 
-                <div class="col"></div>
-                <div class="col">
-                    <div class="card mt-5 cardLogin">
-                        <div class="card-header text-center">
-                            Actualizar Usuario
-                        </div>
-                        <div class="card-body">
+            <div class="col"></div>
+            <div class="col">
+                <div class="card mt-5 cardLogin">
+                    <div class="card-header text-center">
+                        Actualizar Usuario
+                    </div>
+                    <div class="card-body">
 
-                            @using (Html.BeginForm("ActualizarUsuario", "Usuario"))
+                        @using (Html.BeginForm("ActualizarUsuario", "Usuario"))
+                        {
+
+
+
+                            <div class="mb-3">
+                                <label class="text-center">Nombre Completo</label>
+                                @Html.TextBox("NombreUsuario",Model.NombreUsuario.ToString(),
+                            new
                             {
-
-
-
-                                <div class="mb-3">
-                                    <label class="text-center">Nombre Completo</label>
-                                    @Html.TextBox("NombreUsuario",Model.NombreUsuario.ToString(),
-                                new
-                                {
-                                @class="form-control",
-                                required="required",
-                                @type="input",
-                                })
+                            @class="form-control",
+                            @type="text",
+                            @placeholder="Digite el nombre de usuario",
+                            autocomplete="off"
+                            })
+                                <div class=" text-danger mb-2">
+                                    @Html.ValidationMessageFor(d => d.NombreUsuario)
                                 </div>
-                                <div class="mb-3">
-                                    <label class="text-center">Correo electrónico</label>
-                                    @Html.TextBox("Correo",Model.Correo.ToString(),
-                                new
-                                {
-                                @class="form-control",
-                                required="required",
-                                @type="input",
-                                })
+                            </div>
+                            <div class="mb-3">
+                                <label class="text-center">Correo electrónico</label>
+                                @Html.TextBox("Correo",Model.Correo.ToString(),
+                            new
+                            {
+                            @class="form-control",
+                            @type="text",
+                            @placeholder="Digite el corre electrónico",
+                            autocomplete="off"
+                            })
+                                <div class=" text-danger mb-2">
+                                    @Html.ValidationMessageFor(d => d.Correo)
                                 </div>
-                                <div class="mb-3">
-                                    <label class="text-center">Contraseña</label>
-                                    @Html.TextBox("Contraseña",Model.Contraseña.ToString(),
-                                new
-                                {
-                                @class="form-control",
-                                required="required",
-                                @type="password",
-                                })
+                            </div>
+                            <div class="mb-3">
+                                <label class="text-center">Contraseña</label>
+                                @Html.TextBox("Contraseña",Model.Contraseña.ToString(),
+                            new
+                            {
+                            @class="form-control",
+                            @type="password",
+                            @placeholder="Digite la contraseña",
+                            autocomplete="new-password"
+                            })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Contraseña)
                                 </div>
-                                     <div class="mb-3">
+                            </div>
+                            <div class="mb-3">
                                 <label class="text-center">Rol</label>
                                 @Html.DropDownList("Rol",
-                                 new List<SelectListItem>{
-                                     new SelectListItem{ Text ="Mayor", Value = "1"},
-                                     new SelectListItem{ Text ="Menor", Value = "2"}
-                                 },
+                            new List<SelectListItem>{
+                            new SelectListItem{ Text ="Mayor", Value = "1"},
+                            new SelectListItem{ Text ="Menor", Value = "2"}
+                            },
                             new
                             {
                             @class="form-control",
@@ -78,28 +90,28 @@
                             })
                             </div>
 
-                                @Html.TextBoxFor(m=>m.idUsuario,
-                            new
-                            {
-                            @class="form-control",
-                            @type="input", hidden="true"
-                            })
+                            @Html.TextBoxFor(m=>m.idUsuario,
+                        new
+                        {
+                        @class="form-control",
+                        @type="input", hidden="true"
+                        })
 
-                                <div class="mb-3">
-                                    <button class="btn btn-warning" style="width: 100%">Actualizar Usuario</button>
-                                </div>
-
-                            }
-                              <div class="col">
-                                <a class="btn text-white btn-lg btn-block mt-3 h6" style="background-color:#212529; width:100%; font-size:15px" asp-controller="Usuario" asp-action="ConsultarUsuarios">Volver</a>
+                            <div class="mb-3">
+                                <button class="btn btn-warning" style="width: 100%">Actualizar Usuario</button>
                             </div>
-                                 
+
+                        }
+                        <div class="col">
+                            <a class="btn text-white btn-lg btn-block mt-3 h6" style="background-color:#212529; width:100%; font-size:15px" asp-controller="Usuario" asp-action="ConsultarUsuarios">Volver</a>
                         </div>
+
                     </div>
                 </div>
-                <div class="col"></div>
             </div>
+            <div class="col"></div>
         </div>
-    </body>
+    </div>
+</body>
 
 </html>

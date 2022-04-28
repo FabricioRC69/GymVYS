@@ -48,6 +48,7 @@ namespace GymVidaYSaludWEB.Models
             return resp.Datos;
 
         }
+    
         public string RegistrarCliente(string ruta, DatosCliente cliente)
         {
             using (var client = new HttpClient()) { 
@@ -112,6 +113,8 @@ namespace GymVidaYSaludWEB.Models
             }
 
         }
+
+   
 
 
 

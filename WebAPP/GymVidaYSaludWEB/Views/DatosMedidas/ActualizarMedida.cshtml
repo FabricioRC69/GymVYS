@@ -10,7 +10,7 @@
 <body>
     <div class="container">
 
-         <div class="row mt-3">
+        <div class="row mt-3">
             <div class="col-xl-7 mx-auto">
                 <div class="card border-top border-0 border-4 border-warning">
                     <div class="card-body p-5">
@@ -28,167 +28,232 @@
 
                                 <label class="text-center form-label">Cédula de Cliente Disponible</label>
 
-                                @Html.DropDownListFor(m => m.idCliente, ViewBag.Lista as List<SelectListItem>, new { @class="form-control", required="required"})
+                                @Html.DropDownListFor(m => m.idCliente, ViewBag.Lista as List<SelectListItem>, new { @class="form-control",required="required"})
 
                             </div>
 
-                   
+
                             <div class="col-md-6">
                                 <label class="text-center form-label">Peso</label>
                                 @Html.TextBox("Peso",Model.Peso.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite el peso"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Peso)
+                                </div>
                             </div>
-                               <div class="col-md-6">
+                            <div class="col-md-6">
                                 <label class="text-center form-label">Altura</label>
                                 @Html.TextBox("Altura",Model.Altura.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida de la altura"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Altura)
+                                </div>
                             </div>
-                               <div class="col-md-6">
+                            <div class="col-md-6">
                                 <label class="text-center form-label">Hombro</label>
                                 @Html.TextBox("Hombro",Model.Hombro.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del hombro"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Hombro)
+                                </div>
                             </div>
-                               <div class="col-md-6">
+                            <div class="col-md-6">
                                 <label class="text-center form-label">Pecho</label>
                                 @Html.TextBox("Pecho",Model.Pecho.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del pecho"
                             })
-                            </div>                
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Pecho)
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Cadera</label>
                                 @Html.TextBox("Cadera",Model.Cadera.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del cadera"
                             })
-                            </div>                
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Cadera)
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Abdomen</label>
                                 @Html.TextBox("Abdomen",Model.Abdomen.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del abdomen"
                             })
-                            </div>                
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Abdomen)
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Cintura</label>
                                 @Html.TextBox("Cintura",Model.Cintura.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                               @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida de la cintura"
                             })
-                            </div>               
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Cintura)
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Bicep Derecho</label>
                                 @Html.TextBox("BicepD",Model.BicepD.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                                @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del bicep derecho"
                             })
-                            </div>                
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.BicepD)
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Bicep Izquierdo</label>
                                 @Html.TextBox("BicepI",Model.BicepI.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                                @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del bicep izquierdo"
                             })
-                            </div>                
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.BicepI)
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Muslo Derecho</label>
                                 @Html.TextBox("MusloD",Model.MusloD.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                                 @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del muslo derecho"
                             })
-                            </div>                
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.MusloD)
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Muslo Izquierdo</label>
                                 @Html.TextBox("MusloI",Model.MusloI.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                               @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del muslo izquierdo"
                             })
-                            </div>                
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.MusloI)
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Pantorrilla Derecha</label>
                                 @Html.TextBox("PantorrillaD",Model.PantorrillaD.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                                @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la pantorrilla derecha"
                             })
-                            </div>                
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.PantorrillaD)
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Pantorrilla Izquierda</label>
                                 @Html.TextBox("PantorrillaI",Model.PantorrillaI.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type = "decimal",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la pantorrilla izquieda"
                             })
-                            </div>
-                                 @Html.TextBoxFor(m=>m.idMedidas,
-                            new
-                            {
-                            @class="form-control",
-                            @type="input", hidden="true"
-                            })
-
-                            
-                                <div class="mb-3">
-                                    <button class="btn btn-warning" style="width: 100%">Actualizar Medida</button>
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.PantorrillaI)
                                 </div>
+                            </div>
+                            @Html.TextBoxFor(m=>m.idMedidas,
+                        new
+                        {
+                        @class="form-control",
+                        @type="input", hidden="true"
+                        })
+
+
+                            <div class="mb-3">
+                                <button class="btn btn-warning" style="width: 100%">Actualizar Medida</button>
+                            </div>
                         }
 
-                         <div class="col">
-                                <a class="btn text-white btn-lg btn-block mt-3 h6" style="background-color:#212529; width:100%; font-size:15px" asp-controller="DatosMedidas" asp-action="ConsultarMedidas">Volver</a>
-                            </div>
+                        <div class="col">
+                            <a class="btn text-white btn-lg btn-block mt-3 h6" style="background-color:#212529; width:100%; font-size:15px" asp-controller="DatosMedidas" asp-action="ConsultarMedidas">Volver</a>
+                        </div>
                     </div>
                 </div>
             </div>
-          </div>
-          </div>
+        </div>
+    </div>
 
 
-            <div class="col"></div>
- 
+    <div class="col"></div>
+
 
 </body>
 
 </html>
+@section Scripts {
+<script>
+function isNumberKey(evt)
+{
+   var charCode = (evt.which) ? evt.which : event.keyCode
+   if( (charCode > 47 && charCode <58) || charCode == 46 )
+       return true;
+   else
+	return false;
+}
+
+</script>
+}

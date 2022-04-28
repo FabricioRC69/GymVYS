@@ -1,4 +1,5 @@
-﻿@using GymVidaYSaludWEB.Entities
+﻿
+
 @model IEnumerable<GymVidaYSaludWEB.Entities.DatosMedidas>
 
 @{
@@ -11,7 +12,7 @@
 
 }
 
-<div class="container">
+<div class="container" style="margin-left:150px">
 
 <p class="text-center h2 p-4">Tabla de Medidas</p>
 
@@ -22,16 +23,13 @@
 </p>
 }
 
-<table class="table display" id="myTable">
+    <table class="table display" id="myTable">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.idCliente)
             </th>
-
-            <th>
-                Cédula
-            </th>
+            <th>Cédula</th>
             <th>
                 @Html.DisplayNameFor(model => model.Peso)
             </th>
@@ -71,6 +69,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.PantorrillaD)
             </th>
+            <th>Accion</th>
 
 
         </tr>
@@ -93,49 +92,49 @@
                     }
                 }
                 <td>
-                    @Html.DisplayFor(modelItem => item.Peso) cm
+                    @Html.DisplayFor(modelItem => item.Peso) 
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Altura) m
+                    @Html.DisplayFor(modelItem => item.Altura)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Hombro) cm
+                    @Html.DisplayFor(modelItem => item.Hombro)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Pecho) cm
+                    @Html.DisplayFor(modelItem => item.Pecho)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cadera) cm
+                    @Html.DisplayFor(modelItem => item.Cadera)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Abdomen) cm
+                    @Html.DisplayFor(modelItem => item.Abdomen)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cintura) cm
+                    @Html.DisplayFor(modelItem => item.Cintura)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BicepI) cm
+                    @Html.DisplayFor(modelItem => item.BicepI)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BicepD) cm
+                    @Html.DisplayFor(modelItem => item.BicepD)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MusloI) cm
+                    @Html.DisplayFor(modelItem => item.MusloI)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MusloD) cm
+                    @Html.DisplayFor(modelItem => item.MusloD)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PantorrillaI) cm
+                    @Html.DisplayFor(modelItem => item.PantorrillaI)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PantorrillaD) cm
+                    @Html.DisplayFor(modelItem => item.PantorrillaD)
                 </td>
                 @if (ViewBag.Rol == "1")
                 {
 
                     <td>
-                        @Html.ActionLink("Editar", "ActualizarMedida", new { idmedidas=item.idMedidas, idcliente=item.idCliente  }, new {@class="btn btn-warning"}) 
+                        @Html.ActionLink("Editar", "ActualizarMedida", new { idmedidas=item.idMedidas, idcliente=item.idCliente  }, new {@class="btn btn-warning", @style="width:100%"}) 
                         <br>
                         @Html.ActionLink("Información", "ConsultarUnaMedida", new { idmedidas=item.idMedidas }, new {@class="btn btn-primary"})
                    
@@ -150,6 +149,8 @@
         }
     </tbody>
 </table>
+
+
 
 </div>
 

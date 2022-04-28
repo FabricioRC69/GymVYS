@@ -29,7 +29,7 @@
 
                                 <label class="text-center form-label">Cédula de Cliente Disponible</label>
 
-                                @Html.DropDownListFor(m => m.idCliente, ViewBag.Lista as List<SelectListItem>, new { @class="form-control",required="required" })
+                                @Html.DropDownListFor(m => m.idCliente, ViewBag.Lista as List<SelectListItem>, new { @class="form-control", required="required"})
 
 
 
@@ -40,9 +40,14 @@
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                              @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite el peso"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Peso)
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Altura</label>
@@ -50,9 +55,14 @@
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                               @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida de la altura"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Altura)
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Hombro</label>
@@ -60,9 +70,14 @@
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                              @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del hombro"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Hombro)
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label class="text-center form-label">Pecho</label>
@@ -70,90 +85,140 @@
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                              @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del pecho"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Pecho)
+                                </div>
                             </div>                <div class="col-md-6">
                                 <label class="text-center form-label">Cadera</label>
                                 @Html.TextBox("Cadera","",
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                              @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del cadera"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Cadera)
+                                </div>
                             </div>                <div class="col-md-6">
                                 <label class="text-center form-label">Abdomen</label>
                                 @Html.TextBox("Abdomen","",
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                              @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del abdomen"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Abdomen)
+                                </div>
                             </div>                <div class="col-md-6">
                                 <label class="text-center form-label">Cintura</label>
                                 @Html.TextBox("Cintura","",
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                              @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida de la cintura"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Cintura)
+                                </div>
                             </div>                <div class="col-md-6">
                                 <label class="text-center form-label">Bicep Derecho</label>
                                 @Html.TextBox("BicepD","",
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                            @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del bicep derecho"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.BicepD)
+                                </div>
                             </div>                <div class="col-md-6">
                                 <label class="text-center form-label">Bicep Izquierdo</label>
                                 @Html.TextBox("BicepI","",
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                              @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del bicep izquierdo"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.BicepI)
+                                </div>
                             </div>                <div class="col-md-6">
                                 <label class="text-center form-label">Muslo Derecho</label>
                                 @Html.TextBox("MusloD","",
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                              @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del muslo derecho"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.MusloD)
+                                </div>
                             </div>                <div class="col-md-6">
                                 <label class="text-center form-label">Muslo Izquierdo</label>
                                 @Html.TextBox("MusloI","",
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                                @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la medida del muslo izquierdo"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.MusloI)
+                                </div>
                             </div>                <div class="col-md-6">
                                 <label class="text-center form-label">Pantorrilla Derecha</label>
                                 @Html.TextBox("PantorrillaD","",
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                               @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la pantorrilla derecha"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.PantorrillaD)
+                                </div>
                             </div>                <div class="col-md-6">
                                 <label class="text-center form-label">Pantorrilla Izquierda</label>
                                 @Html.TextBox("PantorrillaI","",
                             new
                             {
                             @class="form-control",
-                             required="required",
-                            @type="input",
+                            @type = "number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite la pantorrilla izquieda"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.PantorrillaI)
+                                </div>
                             </div>
 
                             <div class="col-12">
@@ -179,3 +244,15 @@
 </body>
 
 </html>
+@section Scripts {
+<script>
+    function isNumberKey(evt)
+    {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+
+        return true;
+    }
+</script>
+}

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<GymVidaYSaludWEB.Entities.DatosCliente>
+﻿@using Microsoft.AspNetCore.Http;
+@model IEnumerable<GymVidaYSaludWEB.Entities.DatosCliente>
 
 @{
     ViewData["Title"] = "Consultar Clientes";
@@ -10,8 +11,9 @@
 }
 
 <div class="container">
-    
+
 <p class="text-center h2 p-4">Tabla de Clientes</p>
+
 @if (ViewBag.Rol == "1")
 {
 <p>
@@ -20,7 +22,7 @@
 }
 
 
-<table class="table display" id="myTable">
+    <table class="table display" id="myTable">
     <thead>
         <tr>
             <th>
@@ -31,6 +33,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NombreCompleto)
+            </th>
+              <th>
+                @Html.DisplayNameFor(model => model.NumContacto)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Dia_de_Pago_Cada_Mes)
@@ -53,6 +58,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.NombreCompleto)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.NumContacto)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Dia_de_Pago_Cada_Mes)

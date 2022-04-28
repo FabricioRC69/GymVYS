@@ -43,7 +43,6 @@ namespace GymVidaYSaludWEB.Controllers
         }
 
 
-
         [HttpGet]
         public IActionResult ConsultarUnUsuario(long idUsuario)
         {
@@ -61,7 +60,7 @@ namespace GymVidaYSaludWEB.Controllers
 
             return View(resultado);
         }
-
+        [FiltroDeSesion]
         [HttpGet]
         public IActionResult ConsultarPerfil(long idUsuario)
         {
@@ -108,7 +107,7 @@ namespace GymVidaYSaludWEB.Controllers
                 }
             }
         }
-
+        [FiltroDeSesion]
         [HttpGet]
         public IActionResult RegistrarUsuario()
         {
@@ -121,11 +120,21 @@ namespace GymVidaYSaludWEB.Controllers
             var objeto = new UsuariosObj();
             return View(objeto);
         }
-
+        [FiltroDeSesion]
         [HttpPost]
         public IActionResult RegistrarUsuario(UsuariosObj usuario)
         {
-        
+            if (!ModelState.IsValid)
+            {
+                var usuario2 = HttpContext.Session.GetString("NombreUsuario");
+                ViewBag.Usuario = usuario2;
+                var correo = HttpContext.Session.GetString("Correo");
+                ViewBag.Correo = correo;
+                var rol = HttpContext.Session.GetString("Rol");
+                ViewBag.Rol = rol;
+
+                return View(usuario);
+            }
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/RegistrarUsuario";
 
@@ -145,6 +154,7 @@ namespace GymVidaYSaludWEB.Controllers
                 HttpContext.Session.Clear();
                 return RedirectToAction("LogIn", "Usuario");
         }
+        [FiltroDeSesion]
         [HttpGet]
         public IActionResult ActualizarUsuario(long idUsuario)
         {
@@ -155,6 +165,7 @@ namespace GymVidaYSaludWEB.Controllers
             ViewBag.Correo = correo;
             var rol = HttpContext.Session.GetString("Rol");
             ViewBag.Rol = rol;
+
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ConsultarUnUsuario?idUsuario=" + idUsuario;
             var resultado = modelo.ConsultarUnUsuario(ruta);
@@ -162,11 +173,26 @@ namespace GymVidaYSaludWEB.Controllers
             return View(resultado);
 
         }
- 
 
+        [FiltroDeSesion]
         [HttpPost]
         public IActionResult ActualizarUsuario(UsuariosObj usuario)
         {
+            if (!ModelState.IsValid)
+            {
+                var usuario2 = HttpContext.Session.GetString("NombreUsuario");
+                ViewBag.Usuario = usuario2;
+                var correo = HttpContext.Session.GetString("Correo");
+                ViewBag.Correo = correo;
+                var rol = HttpContext.Session.GetString("Rol");
+                ViewBag.Rol = rol;
+
+                string ruta2 = _configuration.GetSection("Llaves:RutaServicio").Value;
+                ruta2 += "/api/Proyecto/ConsultarUnUsuario?idUsuario=" + usuario.idUsuario;
+                var resultado = modelo.ConsultarUnUsuario(ruta2);
+
+                return View(resultado);
+            }
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ModificarUsuario";
 
@@ -195,10 +221,11 @@ namespace GymVidaYSaludWEB.Controllers
                 return View(usuario);
             }
         }
+        [FiltroDeSesion]
         [HttpGet]
         public IActionResult ActualizarPerfil(string idUsuario)
         {
-
+            
             var usuario = HttpContext.Session.GetString("NombreUsuario");
             ViewBag.Usuario = usuario;
             var correo = HttpContext.Session.GetString("Correo");
@@ -214,11 +241,28 @@ namespace GymVidaYSaludWEB.Controllers
             return View(resultado);
 
         }
+        [FiltroDeSesion]
         [HttpPost]
         public IActionResult ActualizarPerfil(UsuariosObj usuario)
         {
 
-            
+            if (!ModelState.IsValid)
+            {
+
+                string ruta2 = _configuration.GetSection("Llaves:RutaServicio").Value;
+                ruta2 += "/api/Proyecto/ConsultarUnUsuario?idUsuario=" + usuario.idUsuario;
+                var resultado = modelo.ConsultarUnUsuario(ruta2);
+
+                var usuario2 = HttpContext.Session.GetString("NombreUsuario");
+                ViewBag.Usuario = usuario2;
+                var correo = HttpContext.Session.GetString("Correo");
+                ViewBag.Correo = correo;
+                var rol = HttpContext.Session.GetString("Rol");
+                ViewBag.Rol = rol;
+
+                return View(resultado);
+            }
+
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ModificarUsuarioSinPermisos";
             string mensaje = "";
@@ -245,6 +289,7 @@ namespace GymVidaYSaludWEB.Controllers
                 return View(usuario);
             }
         }
+        [FiltroDeSesion]
         [HttpGet]
         public IActionResult EliminarUsuario(long idUsuario)
         {

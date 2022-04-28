@@ -7,6 +7,8 @@ using static GymVidaYSaludWEB.Entities.DatosCliente;
 
 namespace GymVidaYSaludWEB.Controllers
 {
+
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -17,7 +19,7 @@ namespace GymVidaYSaludWEB.Controllers
             _logger = logger;
             _configuration = configuration;
         }
-
+        [FiltroDeSesion]
         public IActionResult Index()
         {
             var usuario = HttpContext.Session.GetString("NombreUsuario");

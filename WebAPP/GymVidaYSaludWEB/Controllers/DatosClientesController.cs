@@ -7,6 +7,7 @@ using static GymVidaYSaludWEB.Entities.DatosCliente;
 
 namespace GymVidaYSaludWEB.Controllers
 {
+    [FiltroDeSesion]
     public class DatosClientesController : Controller
     {
 
@@ -35,6 +36,16 @@ namespace GymVidaYSaludWEB.Controllers
             ViewBag.Correo = correo;
             var rol = HttpContext.Session.GetString("Rol");
             ViewBag.Rol = rol;
+            var mensaje = HttpContext.Session.GetString("client-created-message");
+            if(mensaje == null)
+            {
+
+                ViewBag.Mensage = "";
+            } else
+            {
+
+                ViewBag.Mensage = mensaje;
+            }
 
             return View(resultado);
         }
@@ -70,22 +81,34 @@ namespace GymVidaYSaludWEB.Controllers
             var rol = HttpContext.Session.GetString("Rol");
             ViewBag.Rol = rol;
             var objeto = new DatosCliente();
+            HttpContext.Session.SetString("Estado", "registrando");
             return View(objeto);
         }
 
         [HttpPost]
         public IActionResult RegistrarCliente(DatosCliente cliente) {
+            if (!ModelState.IsValid)
+            {
+                var usuario = HttpContext.Session.GetString("NombreUsuario");
+                ViewBag.Usuario = usuario;
+                var correo = HttpContext.Session.GetString("Correo");
+                ViewBag.Correo = correo;
+                var rol = HttpContext.Session.GetString("Rol");
+                ViewBag.Rol = rol;
+                return View(cliente);
+            }
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/RegistrarCliente";
 
             string mensaje = modelo.RegistrarCliente(ruta, cliente);
             if (mensaje == "Registro exitoso")
             {
+                HttpContext.Session.SetString("client-created-message", "El cliente, cedula:" + cliente.Cedula + " y de nombre: " + cliente.NombreCompleto + "ha sido registro exitosamente");
 
                 return RedirectToAction("ConsultarTodosClientes", "DatosClientes");
             }
             else {
-
+                HttpContext.Session.SetString("error", "Error");
                 return View(cliente);
             }
         }
@@ -110,6 +133,20 @@ namespace GymVidaYSaludWEB.Controllers
         [HttpPost]
         public IActionResult ActualizarCliente(DatosCliente cliente)
         {
+            if (!ModelState.IsValid)
+            {
+                var usuario = HttpContext.Session.GetString("NombreUsuario");
+                ViewBag.Usuario = usuario;
+                var correo = HttpContext.Session.GetString("Correo");
+                ViewBag.Correo = correo;
+                var rol = HttpContext.Session.GetString("Rol");
+                ViewBag.Rol = rol;
+                string ruta2 = _configuration.GetSection("Llaves:RutaServicio").Value;
+                ruta2 += "/api/Proyecto/ConsultarUnCliente?idCliente=" + cliente.idCliente;
+                var resultado = modelo.ConsultarUnCliente(ruta2);
+                return View(resultado);
+            }
+
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ModificarCliente";
 

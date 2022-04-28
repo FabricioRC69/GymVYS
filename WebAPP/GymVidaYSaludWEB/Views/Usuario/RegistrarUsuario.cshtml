@@ -32,34 +32,46 @@
                         @using (Html.BeginForm("RegistrarUsuario", "Usuario"))
                         {
                             <div class="mb-3">
-                                <label class="text-center">Nombre de Usuario</label>
+                                <label class="text-center mb-2">Nombre de Usuario</label>
                                 @Html.TextBox("NombreUsuario","",
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type="text",
+                            @placeholder="Digite el nombre de usuario",
+                            autocomplete="off"
                             })
+                                <div class=" text-danger mb-2">
+                                    @Html.ValidationMessageFor(d => d.NombreUsuario)
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label class="text-center">Correo</label>
+                                <label class="text-center mb-2">Correo electrónico</label>
                                 @Html.TextBox("Correo","",
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type="text",
+                            @placeholder="Digite el corre electrónico",
+                            autocomplete="off"
                             })
+                                <div class=" text-danger mb-2">
+                                    @Html.ValidationMessageFor(d => d.Correo)
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label class="text-center">Contraseña</label>
+                                <label class="text-center mb-2">Contraseña</label>
                                 @Html.TextBox("Contraseña","",
                             new
                             {
                             @class="form-control",
-                            required="required",
                             @type="password",
+                            @placeholder="Digite la contraseña",
+                            autocomplete="new-password"
                             })
+                                <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Contraseña)
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label class="text-center">Rol</label>
@@ -71,6 +83,7 @@
                             new
                             {
                             @class="form-control",
+                            required = "required",
                             @type="input",
                             })
                             </div>

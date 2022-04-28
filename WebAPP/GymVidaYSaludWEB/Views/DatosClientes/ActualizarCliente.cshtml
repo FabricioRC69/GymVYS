@@ -39,10 +39,11 @@
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @readonly="readonly",
-                            @type="input",
+                            @type="input",@placeholder="Digite la cédula"
                             })
+                             <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Cedula)
+                                </div>
                             </div>
                                <div class="mb-3">
                                 <label class="text-center">Nombre Completo</label>
@@ -50,28 +51,38 @@
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type="input",@placeholder="Digite el nombre completo"
                             })
+                             <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.NombreCompleto)
+                                </div>
                             </div>
                                            <div class="mb-3">
-                                <label class="text-center">Numero de Contacto</label>
-                                @Html.TextBox("NumContacto",Model.NumContacto.ToString(),
+                                <label class="text-center">Número de Contacto</label>
+
+                                @Html.TextBox("NumContacto",Model.NumContacto.ToString()+"",
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type="number",
+                            @onkeypress="return isNumberKey(event)",
+                            @onpaste="return false",
+                            min="0",@placeholder="Digite el número de contacto"
                             })
+                             <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.NumContacto)
+                                </div>
                             </div>                <div class="mb-3">
                                 <label class="text-center">Correo electrónico</label>
                                 @Html.TextBox("Correo",Model.Correo.ToString(),
                             new
                             {
                             @class="form-control",
-                            required="required",
-                            @type="input",
+                            @type="input",@placeholder="Digite el correo electrónico"
                             })
+                             <div class=" text-danger">
+                                    @Html.ValidationMessageFor(d => d.Correo)
+                                </div>
                             </div>
                         
                             @Html.TextBoxFor(m=>m.idCliente,
@@ -97,3 +108,15 @@
 
 </html>
 </div>
+@section Scripts {
+<script>
+    function isNumberKey(evt)
+    {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+
+        return true;
+    }
+</script>
+}

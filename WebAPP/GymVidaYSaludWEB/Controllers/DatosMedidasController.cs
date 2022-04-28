@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GymVidaYSaludWEB.Controllers
 {
+    [FiltroDeSesion]
     public class DatosMedidasController : Controller
     {
         MedidasModel modelo = new MedidasModel();
@@ -82,6 +83,23 @@ namespace GymVidaYSaludWEB.Controllers
         [HttpPost]
         public IActionResult RegistrarMedida(DatosMedidas medida)
         {
+
+            if (!ModelState.IsValid)
+            {
+                var usuario = HttpContext.Session.GetString("NombreUsuario");
+                ViewBag.Usuario = usuario;
+                var correo = HttpContext.Session.GetString("Correo");
+                ViewBag.Correo = correo;
+                var rol = HttpContext.Session.GetString("Rol");
+                ViewBag.Rol = rol;
+
+                string ruta2 = _configuration.GetSection("Llaves:RutaServicio").Value;
+                ruta2 += "/api/Proyecto/MedidaSelectList";
+                var resultado = modelo.ConsultarMedidaSelectList(ruta2);
+
+                ViewBag.Lista = resultado;
+                return View(medida);
+            }
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/RegistrarMedida";
 
@@ -115,7 +133,6 @@ namespace GymVidaYSaludWEB.Controllers
             string ruta1 = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta1 += "/api/Proyecto/MedidaSelectListAll?idCliente="+ idcliente;
             var resultado1 = modelo.ConsultarMedidaSelectList(ruta1);
-
             ViewBag.Lista = resultado1;
             return View(resultado);
 
@@ -124,6 +141,22 @@ namespace GymVidaYSaludWEB.Controllers
         [HttpPost]
         public IActionResult ActualizarMedida(DatosMedidas medida)
         {
+
+            if (!ModelState.IsValid)
+            {
+                var usuario = HttpContext.Session.GetString("NombreUsuario");
+                ViewBag.Usuario = usuario;
+                var correo = HttpContext.Session.GetString("Correo");
+                ViewBag.Correo = correo;
+                var rol = HttpContext.Session.GetString("Rol");
+                ViewBag.Rol = rol;
+
+                string ruta1 = _configuration.GetSection("Llaves:RutaServicio").Value;
+                ruta1 += "/api/Proyecto/MedidaSelectListAll?idCliente=" + medida.idCliente;
+                var resultado1 = modelo.ConsultarMedidaSelectList(ruta1);
+                ViewBag.Lista = resultado1;
+                return View(medida);
+            }
             string ruta = _configuration.GetSection("Llaves:RutaServicio").Value;
             ruta += "/api/Proyecto/ModificarMedida";
 
