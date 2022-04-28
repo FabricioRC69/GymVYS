@@ -26,7 +26,7 @@
                                 ID Cliente: <span style="color:gray; margin-left:5%;">@Html.DisplayFor(model => model.idCliente)</span>
                             </p>
                             <p class="h4 mt-4">
-                                Peso: <span style="color:gray; margin-left:5%;">@Html.DisplayFor(model => model.Peso) cm</span>
+                                Peso: <span style="color:gray; margin-left:5%;">@Html.DisplayFor(model => model.Peso) kg</span>
                             </p>
                             <p class="h4 mt-4">
                                 Altura: <span style="color:gray; margin-left:5%;">@Html.DisplayFor(model => model.Altura) m</span>
@@ -86,7 +86,9 @@
                       
                 } else
                 {
-                      <a class="btn text-white" style="background-color:#212529" asp-controller="DatosMedidas" asp-action="ConsultarMedidas">Volver</a>
+                    <div class="mt-5 col-lg-8 col-xl-7 col-xxl-6 ">
+                      <a class="btn text-white" style="background-color:#212529; width:100%" asp-controller="DatosMedidas" asp-action="ConsultarMedidas">Volver</a>
+                     </div>
                 }
                  </div>
                 </div>
